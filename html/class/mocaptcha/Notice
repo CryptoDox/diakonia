@@ -7,66 +7,9 @@ Par CryptoDuke
 
 Notice
 
-Fichiers propres à MoCaptcha:
 
-	html/class/mocaptcha/mocaptcha.php						(generation du code)			"/class/mocaptcha/" "moconfig.image.php" "motext.php" "moimage.php"		
-	
-	html/class/mocaptcha/moconfig.image.php					(configuration du mode images)	
-	
-															'rootpath' => XOOPS_ROOT_PATH . '/class/mocaptcha/image',  // __Absolute__ Path to the root of fonts and backgrounds					==>$config
-															'imageurl' => 'class/mocaptcha/image/scripts/mo_image.php',  // Path to the script for creating image, __relative__ to XOOPS_ROOT_PATH	==>$config
-	
-	html/class/mocaptcha/moconfig.php						(configuration du captcha)			"'name' => 'xoopscaptcha',  // captcha name"														==>$config
-	
-	html/class/mocaptcha/moimage.php						(generation du code de l'image)		Appel définit: "xoops_load('XoopsMocaptcha')"	"$this->captcha_handler = XoopsMocaptcha::getInstance()"
-	
-	html/class/mocaptcha/motext.php							(generation du texte)				Fonctions: render() loadText() Variables: $form
-	
-	html/class/mocaptcha/image/scripts/mo_image.php 		(generation des images)
-	
-
-Fichiers contenant des chemins de fichiers ou des definitions de class de MoCaptcha:
+Fichier contenant des chemins de fichiers de MoCaptcha:
 
 	html/class/mocaptcha/mocaptcha.php
 
-	html/class/xoopsload.php						nom définit: xoopsformmocaptcha ==> "/class/xoopsform/formmo_captcha.php"		'captcha' => 'xoopscaptcha' devient 'mocaptcha' => 'xoopscaptcha'
-	
-	html/class/xoopsformloader.php					nom définit: XoopsFormMocaptcha
-	
-	html/class/xoopsform/formmo_captcha.php			nom définit pour la class: XoopsFormMocaptcha
-	
-	
-Fichiers utilisants MoCaptcha:
-
-	html/register.php								(Formulaire + Verification)
-	
-													L82:	echo "<form action='register.php' method='post'>";						(Formulaire)
-															xoops_load('XoopsFormCaptcha');
-															$cpatcha = new XoopsFormCaptcha();
-															echo "<br />" . $cpatcha->getCaption() . ": " . $cpatcha->render();
-															
-													L111:	xoops_load('XoopsCaptcha');												(Verification)
-															$xoopsCaptcha = XoopsCaptcha::getInstance();
-															if (!$xoopsCaptcha->verify()) {
-																$stop .= $xoopsCaptcha->getMessage() . "<br />";
-	
-	
-
-	html/modules/profile/register.php				(Verification)
-	
-													L168:	xoops_load('XoopsCaptcha');
-															$xoopsCaptcha = XoopsCaptcha::getInstance();
-															if (!$xoopsCaptcha->verify()) {
-																$stop .= $xoopsCaptcha->getMessage();
-	
-
-	html/modules/profile/include/form.php
-	
-													L356: "$reg_form->addElement(new XoopsFormMocaptcha(), true);"
-	
-	
-	profile_register.html
-	
-	profile_form.html
-	
-	
+	html/class/xoopsload.php
