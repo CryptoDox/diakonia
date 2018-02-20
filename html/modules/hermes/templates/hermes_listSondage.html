@@ -1,0 +1,70 @@
+<script type="text/javascript" src="<{$pathToolsJS}>"></script>
+
+
+    <div class="itemHead">
+      <span class="itemTitle">
+          <{$textintro}><br>
+      </span>
+    </div>
+
+<!--
+idSondage
+nom
+categorie
+description
+dateDebut
+dateFin
+disposition
+
+--> 
+<div class="itemInfo" style="text-align:left"><b><{$smarty.const._MI_HER_SONDAGES}></b>
+<table width="100%" cellspacing="0" class="outer">
+
+  <{foreach item=sondage name=obSondage from=$listSondages}>
+    <{if $smarty.foreach.obSondage.first}>  
+    <tr>
+      <td class="even" style="padding:10px 10px 10px 10px;">
+        <{$smarty.const._MI_HER_NAME}>
+      </td>
+      <td class="even" style="padding:10px 10px 10px 10px;">
+        <{$smarty.const._MI_HER_CATEGORY}>
+      </td>
+      <td class="even" style="padding:10px 10px 10px 10px;">
+        <{$smarty.const._MI_HER_DESCRIPTION}>
+      </td>
+      <td class="even" style="padding:10px 10px 10px 10px;">
+        <{$smarty.const._MI_HER_DATE_DEBUT}>
+      </td>
+      <td class="even" style="padding:10px 10px 10px 10px;">
+        <{$smarty.const._MI_HER_DATE_FIN}>
+      </td>
+    </tr>
+    <{/if}>
+    
+    <tr>
+      <td class="odd" style="padding:10px 10px 10px 10px;">
+        <A href='<{$urlSondage}><{$sondage.idSondage}>'><{$sondage.nom}></A>
+      </td>
+      <td class="odd" style="padding:10px 10px 10px 10px;">
+        <{$sondage.categorie}>
+      </td>
+      <td class="odd" style="padding:10px 10px 10px 10px;">
+        <{$sondage.description}>
+      </td>
+      <td class="odd" style="padding:10px 10px 10px 10px;">
+        <{$sondage.dateDebut}>
+      </td>
+      <td class="odd" style="padding:10px 10px 10px 10px;">
+        <{$sondage.dateFin}>
+      </td>
+    </tr>
+    
+    
+  <{/foreach}>
+
+</table>
+
+</div>
+
+
+

@@ -1,0 +1,46 @@
+  
+  <div style='width:750px; text-align:center;'>
+  
+  <table class="outer">
+    <tr><td class='head' align='center'><{$property.header}></td></tr>    
+    <tr><td class='head' align='center'><{$structure.nom}></td></tr>
+  </table>  
+    
+  
+  <table width="600px" cellspacing="1" class="outer">
+      <{foreach item=article name=titi from=$info}>
+          <{if $smarty.foreach.titi.first}>
+            <tr>
+          <{elseif ($smarty.foreach.titi.iteration-1) is div by $params.smartyTag_cols}>  
+            </tr><tr>   
+          <{/if}>
+          <!-- ************************************************* -->
+          <td>
+            <div style='width:<{$params.smartyTag_colwidth}>; height:<{$params.smartyTag_colheight}>;overflow: scroll'>   
+              <table width="100%" cellspacing="1" class="outer">        
+              <tr>          
+                <td class='odd' align='left'>             
+                <{$article.col_pubDate.value}> - <{$article.col_title.value}>  
+                </td>    
+              </tr>                     
+              
+              <tr>          
+                <td class='odd' align='left'>             
+                <{$article.col_description.value}>  
+                </td>    
+              </tr>                     
+              </table>
+            </div>
+          </td>          
+                  
+          <{if $smarty.foreach.titi.last}>          
+            </tr>
+          <{/if}>
+          
+      <{/foreach}>
+  
+  </table>
+  <table class="outer"><tr><td class='foot'><{$property.footer}></td></tr></table>
+  
+
+  </div>

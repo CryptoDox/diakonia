@@ -1,0 +1,46 @@
+<?php
+// index
+define('_AM_CONTACT_INDEX_ADMENU1', "Messages");
+define('_AM_CONTACT_INDEX_TOTAL', "Il y a <span class='green'>%s</span> message(s) dans notre base de données");
+// Contact
+define('_AM_CONTACT_ID', "ID");
+define('_AM_CONTACT_SUBJECT', "Sujet");
+define('_AM_CONTACT_DEPARTMENT', "Département");
+define('_AM_CONTACT_SUBMITTER', "Propos&#233; par");
+define('_AM_CONTACT_DATE', "Date de soumission");
+define('_AM_CONTACT_MESSAGE', "Message");
+define('_AM_CONTACT_EMAIL', "Courriel");
+define('_AM_CONTACT_URL', "Lien");
+define('_AM_CONTACT_VIEWURL', "Voir URL");
+define('_AM_CONTACT_ICQ', "ICQ");
+define('_AM_CONTACT_COMPANY', "Compagnie");
+define('_AM_CONTACT_LOCATION', "Location g&#233;ographique");
+define('_AM_CONTACT_IP', "IP");
+define('_AM_CONTACT_PHONE', "Téléphone");
+define('_AM_CONTACT_ADDRESS', "Adresse");
+define('_AM_CONTACT_ACTION', "Action");
+define('_AM_CONTACT_VIEW', "Voir");
+define('_AM_CONTACT_REPLY', "Réponse");
+define('_AM_CONTACT_HAVEREPLY', "Répondu");
+define('_AM_CONTACT_HAVENTREPLY', "Non Répondu");
+define('_AM_CONTACT_FROM', "De");
+define('_AM_CONTACT_NAMEFROM', "Nom");
+define('_AM_CONTACT_MAILFROM', "Courriel");
+define('_AM_CONTACT_TO', "à");
+define('_AM_CONTACT_NAMETO', "Nom");
+define('_AM_CONTACT_MAILTO', "Courriel");
+define('_AM_CONTACT_TITLE', "Titre");
+define('_AM_CONTACT_INFO', "Information");
+define('_AM_CONTACT_MSG_EXIST', "Les messages sélectionnés n'existent pas");
+define('_AM_CONTACT_MSG_DELETE', "Êtes-vous certain de vouloir supprimer ce message et toutes les réponses ?");
+define('_AM_CONTACT_MSG_DELETED', "Le message que vous avez sélectionné a été supprimé");
+define('_AM_CONTACT_MSG_DELETEERROR', "Erreur lors de la suppression du message");
+define('_AM_CONTACT_MSG_PRUNE_DELETED', "%s messages supprimés");
+define('_AM_CONTACT_TOOLS_PRUNE', "Supprimer les Messages");
+define('_AM_CONTACT_TOOLS_PRUNE_BEFORE', "Supprimer les messages qui ont été publiés avant le");
+define('_AM_CONTACT_TOOLS_PRUNE_REPLYONLY', "Supprimer seulement les messages avec réponses");
+define('_AM_CONTACT_LOGS_FORM', "Formulaire de rapport");
+define('_AM_CONTACT_LOGS_COLUMN', "Sélectionnez la colonne souhaitée");
+define('_AM_CONTACT_LOGS_COLUMN_PHONE', "Téléphone");
+define('_AM_CONTACT_LOGS_COLUMN_URL', "Lien");
+define('_AM_CONTACT_LOGS_COLUMN_MAIL', "Courriel");

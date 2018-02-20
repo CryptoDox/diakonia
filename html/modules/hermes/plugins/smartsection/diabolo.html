@@ -1,0 +1,32 @@
+  
+  <div>  
+  <table class="outer"><tr><td class='head' ><{$property.header}></td></tr></table>    
+  
+  <table width="100%" cellspacing="1" class="outer">
+      <{foreach item=article from=$info}>
+            <{foreach key=key item=zone from=$article}>      
+          <tr>            
+            
+                  <td class='odd' align='left'>             
+                  <{$key}>  
+                  </td>       
+                
+                  <td class='odd' align='left'>             
+                  <{$zone}>  
+                  </td>       
+                                                     
+            <{/foreach}>          
+          </tr>  
+          <!-- ===================================================== -->
+          <tr>            
+            <td class='odd' colspan='2'>   
+              <hr>
+            </td>                         
+          </tr>            
+          <!-- ===================================================== -->          
+      <{/foreach}>
+  
+  </table>
+  <table class="outer"><tr><td class='foot'><{$property.footer}></td></tr></table>
+  
+  </div>

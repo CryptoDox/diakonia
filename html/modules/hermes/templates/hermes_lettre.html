@@ -1,0 +1,72 @@
+    
+
+    <div class="itemHead">
+      <span class="itemTitle">
+          <{$textintro}><br>
+      </span>
+    </div>
+  <!-- =============================================================== -->
+  <FORM NAME="frmRegistry" ACTION="index.php?op=<{$opRegistry}>" METHOD=POST>
+  
+  <INPUT TYPE="hidden" NAME="idUser" VALUE="<{$idUser}>">
+  
+ <div class="itemInfo" style="text-align:left"> 
+ 
+      <table  border="0" width="70%" cellspacing="0" cellpadding="0">
+  
+        <tr>
+             <td width="30px"  class="itemHead" style="text-align:right"  >
+                  <b>#</b>
+            </td>
+
+             <td width="80px"  class="itemHead" style="text-align:left"  >
+                <{$smarty.const._MD_HER_STATUS}>
+             </td>
+        
+        
+             <td width="100px"  class="itemHead" style="text-align:left"  >
+                  <{$smarty.const._MD_HER_NEXTPARUTION}> 
+            </td>
+        
+            <td width="250px"  class="itemHead" style="text-align:left"  >
+                  <{$smarty.const._MD_HER_NAME}> 
+            </td>
+            
+            <td class="itemHead" style="text-align:left">
+                <{$smarty.const._MD_HER_CAPTION}>
+            </td>
+            
+            
+        </tr>  
+
+ 
+
+ 
+ 
+ 
+
+ </table>  
+
+        <{foreach item=lettre from=$post}>
+          <{include file="db:hermes_lettreDetail.html"}>
+        <{/foreach}>
+
+ 
+
+        
+  </div>
+ 
+       <!--****************************************************************** -->      
+      <table width="100%" cellspacing="1" class="outer">
+        <tr>
+        
+            <td class='odd' align='center'>
+                <input type="submit" name="submit" value="<{$smarty.const._MD_HER_VALIDER}>">
+            </td>
+        
+        </tr>  
+      </table>
+      <!--****************************************************************** -->
+</form>
+
+

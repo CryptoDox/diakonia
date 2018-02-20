@@ -1,0 +1,78 @@
+<script type="text/javascript" src="<{$pathToolsJS}>"></script>
+
+
+    <div class="itemHead">
+      <span class="itemTitle">
+          <{$textintro}><br>
+      </span>
+    </div>
+
+<table width="100%" cellspacing="0" class="outer">
+  <tr>
+    <th style='text-align = left' width = '30%'>
+      <{$smarty.const._MD_HER_LETTER}> : <{$listLettres}>
+    </th>
+    <th style='text-align = left' >
+      <{$smarty.const._MD_HER_LETTER}> : <{$lettre.libelle}>
+    </th>
+
+  </tr>
+  <{if $introtext !=''}>  <{/if}>
+  
+  <tr>
+    <td class="even" style="padding:10px 10px 10px 10px;"></td>
+  </tr>
+  
+  <tr>
+    <td class="even" style="padding:10px 10px 10px 10px;" colspan='2'><{$lettre.description}></td>
+  </tr>
+
+</table>
+
+
+ <div class="itemInfo" style="text-align:left"><b><{$post.property}></b> 
+    <table  border="0" width="70%" cellspacing="0" cellpadding="0">
+  
+        <tr>
+             <td width="50px"  class="itemHead" style="text-align:left"  >id_Lettre<br>id_Archive</td>
+        
+        
+             <td width="100px"  class="itemHead" style="text-align:left"  >
+                  <{$smarty.const._MD_HER_DATEPARUTION}> 
+            </td>
+        
+            <td width="250px"  class="itemHead" style="text-align:left"  >
+                  <{$smarty.const._MD_HER_NAME}> 
+            </td>
+            
+            <td class="itemHead" style="text-align:left">
+                <{$smarty.const._MD_HER_CAPTION}>
+            </td>
+            
+            <td class="itemHead" style="text-align:left">
+                <{$smarty.const._MD_HER_ENVOIS}>
+            </td>
+            <td class="itemHead" style="text-align:left">
+                <{$smarty.const._MD_HER_AVERAGE}>
+            </td>
+            
+        </tr>  
+
+
+
+        <{foreach item=archive from=$post}>
+          <{include file="db:hermes_archiveDetail.html"}>
+        <{/foreach}>
+
+
+    </table>      
+  
+
+        
+  </div>
+
+
+
+
+
+

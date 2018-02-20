@@ -1,0 +1,150 @@
+<?php
+/********************************************************/
+/* XOOPS Web Tools ver 1.1                              */
+/* 30/4/2008                                            */
+/* By: Mowaffak (www.arabxoops.com)                     */
+/* based on PHP-Nuke Tools Ver 3.0 by Disipal           */
+/* Author website: www.disipal.net                      */
+/********************************************************/
+
+define("_dis","<strong>Outils Web XOOPS ver 1.1</strong>");
+# START - DO NOT REMOVE OR EDIT THE FOLLOWING COPYRIGHT LINES
+define("_discopy","Outils Web XOOPS ver 1.1<br />par <a href=\"http://www.arabxoops.com\" rel=\"external\">arabxoops</a> bas&eacute; sur PHP-Nuke Tools cr&eacute;&eacute; par <a href=\"http://www.disipal.net\" rel=\"external\">disipal</a>");
+# END - COPYRIGHT LINES ENDS HERE - THANKS!
+define("_SELEC","S&eacute;lectionner&nbsp;tout");
+define("_CLEAR","R&eacute;initialiser");
+define("_MAKEMOD","Cr&eacute;er un module XOOPS");
+define("_MODULEC","Cr&eacute;ateur de module XOOPS");
+define("_MODINFO","<br /><font class=\"content\">Cliquez pour cr&eacute;&eacute;er un module XOOPS</font>");
+define("_MAKEBLOK","Cr&eacute;er un bloc XOOPS");
+define("_MODHELP","Help for XOOPS Module Creator");
+define("_BLKHELP","Help for XOOPS Block Creator");
+define("_BLOKINFO","<br /><font class=\"content\">Cliquez pour cr&eacute;er un bloc XOOPS</font>");
+define("_CONVERT","Convertir");
+define("_CONINFO","<br /><font class=\"content\">Cliquez&nbsp;pour&nbsp;convertir</font>");
+define("_PASTE","Collez votre code");
+define("_BLOCKC","Cr&eacute;ateur de bloc XOOPS");
+define("_HTMLC","HTML en PHP");
+define("_EDITORC","Editeur HTML Online");
+define("_END","Fin");
+define("_PREV","Pr&eacute;visualiser");
+define("_START","Start Over");
+define("_ABOUT","Au sujet");
+define("_ITAL","Italique");
+define("_BOL","Gras");
+define("_UNDER","Soulign&eacute;");
+define("_PRE","Pr&eacute;format&eacute;");
+define("_CENT","Centr&eacute;");
+define("_HO","Barre Horizontale");
+define("_LINE","Saut de ligne");
+define("_PA","Saut de paragraphe");
+define("_FORMA","Format&eacute;");
+define("_MODE","Mode");
+define("_HELP","Aide");
+define("_HELPT","Commentaires au sujet de cet &eacute;l&eacute;ment");
+define("_PROMPT","Prompt");
+define("_PROMPTT","Prompts you for information to<br />  put in the element and writes it");
+define("_BASIC","Basique");
+define("_BASICT","Ecrivez seulement les &eacute;l&eacute;ments dans<br />le champ texte");
+define("_HEADIN","En-t&#234;te");
+define("_LINKS","Liens");
+define("_OP","Ouvrir");
+define("_TEXT","Texte");
+define("_CLO","Fermer");
+define("_ANC","Ancre");
+define("_LISTS","Liste");
+define("_ITE","Item");
+define("_TERM","Terme");
+define("_DEF"," D&eacute;finition");
+define("_IMAGS","Images");
+define("_IMAG","Image");
+define("_ALIG","Alignement");
+define("_TOP","Top");
+define("_MIDDLE","Milieu");
+define("_BOTTOM","Bas");
+define("_TSCON","Pour enregistrer : Cliquez sur &#96;pr&eacute;visualisez&#96;, puis &#96;Enregistrez le fichier sous&#96; dans la nouvelle fen&#234;tre.");
+define("_POPUP","Cr&eacute;ateur de Popup");
+define("_STEP","Etape 1 :");
+define("_STEPP"," Configurez le visuel de votre fen&#234;tre popup");
+define("_TOOLBAR","Barre Outils : ");
+define("_LOCATION","Barre de localisation : ");
+define("_DIRECT","Barre d&#96;adresse :");
+define("_STATUSBA","Barre d&#96;&eacute;tat : ");
+define("_SCROLL","Scrollbars : ");
+define("_MENUBAR","Barre de menu : ");
+define("_RESI","Redimensionnable ? ");
+define("_LIVE","Pr&eacute;visualisation en Live");
+define("_STTEP","Etape 2 :");
+define("_STTEPP"," Voulez-vous que la fen&#234;tre popup s&#96;ouvre automatiquement, ou via<br />un lien hypertexte ?<br />");
+define("_AYTO","Automatiquement");
+define("_TEXTLI","Lien hypertexte");
+define("_GENERA","G&eacute;n&eacute;rez le Code");
+define("_RESET","R&eacute;initialisation");
+define("_SCTGC","Copiez simplement le code dans la section &lt;BODY&gt de votre page web !");
+define("_CTPF","Configuration de la popup :");
+define("_TCTD","-Pour changer le fonctionnement de la popup, modifier la variable &quot;popurl&quot; dans la fonction openpopup()</small><br /><small>- Pour modifier la largeur/hauteur de la popup, changer les attributs &agrave; l&#96;int&eacute;rieur de la fonction openpopup()");
+define("_SCROLLC","Cr&eacute;ateur de Scrollbar");
+define("_HEXC","Couleurs Hex");
+define("_HEXV","Color Match");
+define("_RED","Rouge :");
+define("_GREEN","Vert :");
+define("_BLUE","Bleue :");
+define("_RGB","RGB : ");
+define("_METAC","Cr&eacute;ateur de Meta");
+define("_MTIT","Titre :");
+define("_AUTHOR","Auteur :");
+define("_SUBJ","Sujet :");
+define("_DESCRR","Description :");
+define("_KEYW","Mots-cl&eacute;s :");
+define("_GENER","G&eacute;n&eacute;rateur :");
+define("_LANGUA","Langue :");
+define("_EXPR","Expiration :");
+define("_ABSTRA","Description :");
+define("_COPYRIGHTT","Copyright :");
+define("_DESIGN","Designer :");
+define("_PUBLIS","R&eacute;dacteur :");
+define("_RA","Revisiter après :");
+define("_DISTR","Distribution :");
+define("_GLOBAL","1. Global");
+define("_LOCAL","2. Local");
+define("_IU","3. Usage interne");
+define("_ROBOTS","Robots :");
+define("_ALLR","1. Tout");
+define("_NONEE","2. Rien");
+define("_IND","3. Index");
+define("_NIND","4. pas d&#96;index");
+define("_FOL","5. Suivre");
+define("_NFOL","6. Ne pas suivre");
+define("_CREATMT","Cr&eacute;er les Meta Tag");
+define("_CLEARALL","r&eacute;initialiser tout");
+define("_INAST","Instructions :");
+define("_SIML"," Copiez simplement les lignes de code suivantes et ins&eacute;rez les entre les balises <head> et </head> de votre document HTML.");
+define("_SELE","S&eacute;lectionnez en un");
+define("_HTMLASP","HTML en ASP");
+define("_HTMLJS","HTML en Javascript");
+define("_HTMLJSP","HTML en JSP");
+define("_HTMLPERL","HTML en Perl");
+define("_HTMLSWS","HTML en SWS");
+
+
+define("_PREVIEWER","Pr&eacute;visualiseur");
+define("_SCODER","Encodage Source");
+define("_HTMLCODER","Encodage HTML");
+define("_URLCODER","Encodage URL");
+define("_EMAILCODER","Encodage Email");
+define("_ROTCODER","Encodage Rot-13");
+define("_DEDUPER","Retirer les duplications");
+define("_ENCODE","Encodage");
+define("_DECODE","D&eacute;codage");
+define("_ROTI","Entrez le texte et pressez &#96;Encodage&#96;.");
+define("_YEA","Votre adresse e-mail :");
+define("_EEA","Adresse e-mail encod&eacute;e :");
+define("_EMAILI","Ce formulaire vous permet d&#96;encoder votre adresse e-mail pour utilisation/publication ");
+define("_EMAILII",", Transformez votre adresse e-mail ascii en son entit&eacute; &eacute;quivalente d&eacute;cimale.<strong>Entrez simplement votre adresse e-mail</strong> dans le premier champ, <strong>cliquez sur le bouton &#96;Encodage&#96;</strong>, et puis <strong>copiez le code</strong> produit dans le deuxième champ. Cette adresse e-mail encod&eacute;e peut &#234;tre lu et traduite en son original ascii texte par tout navigateur sans action de votre part. Remplacer dans vos pages web votre adresse e-mail par celle encod&eacute;e.");
+define("_URLT","Utilisez cet encodage/d&eacute;codage d&#96;URLs. Les adresses hypertextes seront encod&eacute;es afin d&#96;&eacute;viter des caractères particuliers entraînant des problèmes dans l&#96;utilisation d&#96;adresse web. Quand ces caractères ne sont pas employ&eacute;s dans leur rôle particulier &agrave; l&#96;int&eacute;rieur d&#96;une URL, ils doivent &#234;tre encod&eacute;s sinon ils peuvent &#234;tre reconnus en tant que caractères dangereux.");
+define("_CON","Convertir");
+define("_HTMLEP","L&#96;encodage HTML pr&eacute;vient un rendu correct de votre code par les navigateurs.");
+define("_CFF","Convertir pour forums.");
+define("_PREVIEWR","Pr&eacute;visualiser");
+define("_PREVIEWERI","Entrez votre encodage HTML ou Javascript ci-dessous pour v&eacute;rifier son apparence ou pour v&eacute;rifier que le code du script est exempt d&#96;erreurs.");
+?>

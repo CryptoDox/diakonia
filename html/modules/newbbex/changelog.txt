@@ -1,0 +1,38 @@
+Changelog
+
+************
+v1.7
+************
+- Better compatibility with Xoops 2.3
+- Depreciated functions were changed
+- Several bugs corrections
+
+************
+v1.6
+************
+- The module is now Xoops 2.3 compatible
+- Many corrections in the use of the deprecated TextSanitizer functions
+- Some bugs corrections in the attachments
+- I have removed some warnings
+- Correction of a typo in the english blocks.php file
+
+************
+v1.5
+************
+- You can attach files to posts
+
+************
+v1.4
+************
+- Some bugs corrections in the preview form and while creating a post
+- the module is available in Brazilian, Romanian and Spanish
+
+************
+v1.3
+************
+- The module fully support Xoops 2.0.14
+- Some templates were modified/corrected
+- I have replace $HTTP_GET_VARS and $HTTP_POST_VARS with their "new" equivalents
+- I have corrected a minor "bug" in the module's advanced search (not the one called by Xoops),
+  it was possible to see topics titles you don't have the right to see (just the title, not
+  the content)

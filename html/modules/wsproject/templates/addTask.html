@@ -1,0 +1,61 @@
+<form name="addTask" method="post" action="index.php" style="padding:0px;margin:0px;">
+<table class="outer">
+	<tr>
+		<th colspan="2">
+			<a class="itemHead" href="?op=showproject&amp;project_id=<{$data.project_id}>"><b><{$lang.showproject}></b></a>
+			<input type="hidden" name="op" value="showproject" />
+			<input type="hidden" name="subop" value="addtask" />
+			<input type="hidden" name="project_id" value="<{$data.project_id}>" />
+		</th>
+	</tr>
+	<tr>
+		<td style="width:38%;text-align:right;" class="head"><b><{$lang.projectname}>: </b></td>
+		<td class="even">
+			<a href="?op=showproject&amp;project_id=<{$data.project_id}>"><{$data.project_name}></a>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:38%;text-align:right;" class="head"><b><{$lang.taskname}>: </b></td>
+		<td class="even"><input name="title" type="text" size="40" maxlength="100" /></td></tr>
+	<tr>
+		<td style="width:38%;text-align:right;" class="head"><b><{$lang.assignedto}>: </b></td>
+		<td class="even">
+			<select name="user_id">
+				<{foreach from=$data.users item=user}>
+					<option value="<{$user.uid}>"><{$user.uname}></option>
+				<{/foreach}>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td style="width:38%;text-align:right;" class="head"><b><{$lang.quotedhours}>: </b></td>
+		<td class="even"><input name="hours" type="text" size="40" maxlength="100" /></td>
+	</tr>
+	<tr>
+		<td style="width:38%;text-align:right;" class="head"><b><{$lang.public}>: </b></td>
+		<td class="even"><input type="checkbox" name="public" value="true" /></td>
+	</tr>
+	<tr>
+		<td style="width:38%;text-align:right;" class="head"><b><{$lang.subtaskof}>: </b></td>
+		<td class="even">
+			<select name="parent_id">
+					<option value="0"><{$lang.toplevel}></option>
+					<option value="0">------------</option>
+				<{foreach from=$data.tasks item=task}>
+					<option value="<{$task.task_id}>"><{$task.title|indent:$task.indent:"&nbsp;"}></option>
+				<{/foreach}>
+			</select>
+		</td>
+	</tr>		
+	<tr valign="top">
+		<td style="width:38%;text-align:right;" class="head"><b><{$lang.description}>: </b></td>
+		<td class="even"><textarea name="description" cols="40" rows="7" id="description"></textarea></td>
+	</tr>
+	<tr>
+		<td class="foot">&nbsp;</td>
+		<td class="foot"><input type="submit" name="submit" value="<{$lang.addtask}>" /></td>
+	</tr>
+</table>
+</form>
+<br />
+<br />

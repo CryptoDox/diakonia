@@ -1,0 +1,22 @@
+Legend :
++ Added
+- Removed
+* Modified
+
+*******
+v1.5
+*******
+admin.php
++ _MDEX_A_ALLOW_UPLOAD
+
+main.php
++ _MDEX_ATTACH_FILE
++ _MDEX_ATTACHED_FILES
++ _MDEX_UPLOAD_DBERROR_SAVE
++ _MDEX_UPLOAD_ERROR
+
+modinfo.php
++ _MI_NEWBBEX_ATTACH_FILES
++ _MI_NEWBBEX_ATTACH_HLP
++ _MI_NEWBBEX_UPLSIZE
++ _MI_NEWBBEX_UPLSIZE_DSC

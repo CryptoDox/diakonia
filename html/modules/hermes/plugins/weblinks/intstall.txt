@@ -1,0 +1,8 @@
+Installation des plugins
+---------------------------------
+1- Par precaution, supprimer le dossier de l'ancien plugin
+   dans le repertoire "modules/hermes/plugins"
+2-Copiez le dossier dans le repertoire "modules/hermes/plugins"
+3-Mettez a jour la liste des plugins dans le premier onglet 
+  de l'administration de "hermes".
+

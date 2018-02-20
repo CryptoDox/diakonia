@@ -1,0 +1,122 @@
+<?php 
+echo "<!doctype html>";
+echo '<html lanf="fr">';
+echo "<head>";
+echo '<meta charset="UTF-8" />';
+echo "<script scr='/jquery/jquery-3.2.1.js'></script>";
+echo '<script scr="https://authedmine.com/lib/captcha.min.js" async></script>';
+echo "</head>";
+echo "<body>";
+/* INDEX */
+/* Contexte*/
+
+require $GLOBALS['DOCUMENT_ROOT'].('include/fonction_fix_balises.inc.php');
+require $GLOBALS['DOCUMENT_ROOT'].('include/fonction_captcha_var.inc.php');
+require $GLOBALS['DOCUMENT_ROOT'].('include/no_javascript_message.inc.php');
+if ((require 'include/fonction_captcha_var.inc.php') == '1') {
+		echo 'OK';
+}
+	else {
+		echo 'NO';
+}
+
+
+/* $tex_jsplease = "<br />"; */
+
+//define ('CHARSET', 'UTF-8');
+//define ('REPLACE_FLAGS', 'ENT_COMPAT | ENT_XHTML');
+
+//function fix_balises($text){
+		//$text = htmlspecialchars($text);
+		//$text = preg_replace("/=/", "=\"\"", $text);
+		//$text = preg_replace("/&quot;/", "&quot;\"", $text);
+		//$tags = "/&lt;(\/|)(\w*)(\ |)(\w*)([\\\=]*)(?|(\")\"&quot;\"|)(?|(.*)?&quot;(\")|)([\ ]?)(\/|)&gt;/i";
+		//$replacement = "<$1$2$3$4$5$6$7$8$9$10>";
+		//$text = preg_replace($tags, $replacement, $text);
+		//$text = preg_replace("/=\"\"/", "=", $text);
+	//return $text;
+//}
+
+// include 'include/fonction_fix_balises.inc.php';
+
+//if ((include'include/fonction_fix_balises.inc.php') == '1') {
+//		echo 'OK';
+//}
+//	else {
+//		echo 'NO';
+//}
+
+/* check if start page is defined */
+
+	
+	/* Chargement des Script et Bibliothèques */
+	/* <script src="<{xoImgUrl}>js/jquery-1.10.2.js"></script> */
+	/* $xoTheme->addScript(XOOPS_URL . '/include/layersmenu.js'); */
+	/* <script src="<{xoImgUrl}>jquery/jquery-3.2.1.js"></script>} */
+	/* echo "<script> scr='/jquery/jquery-3.2.1.js'</script>"; */
+	/* <script src="<{xoImgUrl}>https://authedmine.com/lib/captcha.min.js" async></script>} */
+	/* echo "<script> scr='https://authedmine.com/lib/captcha.min.js'</script>"; */
+
+
+	/* DIV affichage de l'avertissement id="divJavaScriptAccepted" class="down" */
+
+		//echo ('<div id="divJavaScriptAccepted" align="center" class="down">').('<br>').fix_balises("$tex_nojs").('<br>').fix_balises("$tex_jsvp").('</div>');
+		//echo ("$bdiv_1"."$bbr_1"."$fb1"."$bbr_1"."$fb2"."$bdiv_2");
+ 		//echo ('<br>').fix_balises("$tex_nojs").('<br>').fix_balises("$tex_jsvp");
+		//echo ('<br>');
+ 		//echo fix_balises("$tex_jsvp");
+		//echo ('</div>');
+?>
+
+	<!-- Fonction JavaScript pour tester JavaScript "testJavascript" -->
+	
+	<script language="javascript">
+  function testJavascript(id) {
+    document.getElementById(id).style.visibility = "hidden"; /* Hide ('divJavascriptSupport'); // on masque le div si Javascript marche */
+	}
+	</script>
+
+	<script language="javascript">
+	testJavascript('divJavaScriptAccepted');
+	</script>
+	
+<?php
+		/* Generation de la fonction formulaire (gen_form) */
+
+	function gen_form() {
+?>
+		
+<form action="D.php" method="post">
+	<script src="https://authedmine.com/lib/captcha.min.js" async></script>
+	<script>
+		function myCaptchaCallback(token) {
+			alert('Hashes reached. Token is: ' + token);
+		}
+	</script>
+	
+	<div class="coinhive-captcha" 
+		data-hashes="1024" 
+		data-key="ijfygbxwHMzFcIpljkU3WVpwRkLkuGmD"
+		data-autostart="false"
+		data-whitelabel="false"
+		data-disable-elements="input[type=submit]"
+		data-callback="myCaptchaCallback"
+	>
+		<em>Chargement du Captcha...<br>Si l'image ne se charge pas, veuillez désactiver Adblock SVP!</em>
+	</div>
+
+	<input type="submit" value="Télécharger"/>
+	
+</form>
+
+<?php	}
+
+	
+	/* Afficher le formulaire */
+
+	echo gen_form();
+
+	/* FIN du CORPS */
+	
+echo '</body>';
+?>

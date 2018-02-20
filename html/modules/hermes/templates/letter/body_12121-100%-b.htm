@@ -1,0 +1,89 @@
+﻿<{$her_avertissement}>
+<{$encodage_xml}>
+<html>
+
+<head>
+<{include file="$her_header"}>
+</head>
+
+<body <{$her_background}> >
+<center>
+<div style="width:<{$her_pageWidth}>;">
+
+<center>
+<table border="0" width="<{$her_pageWidth}>" cellspacing="0" cellpadding="0">
+<tr><td align='center'>
+  <{if $her_showTplName == 1}>
+    <table border='1'>
+      <tr><td  border = '1' colspan='3' align='center'>Templates</td></tr>
+      <tr><td>Body</td>   <td> = </td> <td><{$her_tplBody}></td>   </tr>
+      <tr><td>Header</td> <td> = </td> <td><{$her_tplHeader}></td> </tr>
+      <tr><td>Footer</td> <td> = </td> <td><{$her_tplFooter}></td> </tr> 
+    </table>
+  <{/if}>
+
+  <{if $her_stat <> ''}>
+    <table border = '0'><tr><td>
+      <{$her_stat}>
+    </td></tr></table>
+  <{/if}>
+  
+  <{if $her_description <> ''}>
+    <table border = '0'><tr><td>
+      <{$her_description}>
+    </td></tr></table>
+  <{/if}>
+  
+
+
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" style='background:transparent;'>
+  <tr>
+    <td class='even' width="100%" ><{$a1a_top}></td>
+  </tr>
+  
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" style='background:transparent;'>
+  
+  <tr>
+    <td class='odd'  width="40%" style="vertical-align:top;background:transparent;'">
+      <{$b1a_left}>
+    </td>
+    <td class='even' width="60%" style="vertical-align:top;background:transparent;'">
+      <{$b1b_right}>
+    </td>
+  </tr>
+  
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" style='background:transparent;'>
+  
+  <tr>
+    <td class='even' width="100%" colspan="2"><{$c1a_middle}></td>
+  </tr>
+  
+  <tr>
+    <td class='odd'  width="40%" style="vertical-align:top;background:transparent;'">
+      <{$d1a_left}>
+    </td>
+    <td class='even' width="60%" style="vertical-align:top;background:transparent;'">
+      <{$d1b_right}>
+    </td>
+  </tr>
+  
+  <tr>
+    <td class='footer' width="100%" colspan="2">
+      <{$z1a_bottom}>
+    </td>
+  </tr>
+  
+</table>
+
+<{include file="$her_footer"}>
+
+</td></tr>
+</table></div></center>
+</body>
+
+</html>

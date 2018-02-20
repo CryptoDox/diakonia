@@ -1,0 +1,77 @@
+<script type="text/javascript" src="<{$pathToolsJS}>"></script>
+
+
+    <div class="itemHead">
+      <span class="itemTitle">
+          <{$textintro}><br>
+      </span>
+      <span class="itemTitle">
+          <{$description}><br>
+      </span>
+      
+    </div>
+
+<!--
+idSondage
+idReponse
+ordre
+nom
+sommeDeReponse
+
+--> 
+<div class="outer" style="text-align:left"><b><{$smarty.const._MI_HER_SONDAGES}></b>
+<table width="100%" cellspacing="0" class="outer">
+
+  <{foreach item=reponse name=obSondage from=$listReponses}>
+    <{if $smarty.foreach.obSondage.first}>  
+    <tr>
+      <td class="odd" style="padding:10px 10px 10px 10px;" align='center'>
+        <{$smarty.const._MI_HER_ID}>
+      </td>
+      <td class="odd" style="padding:10px 10px 10px 10px;" align='center'>
+        <{$smarty.const._MI_HER_REPONSE}>
+      </td>
+      <td class="odd" style="padding:10px 10px 10px 10px;" align='center'>
+        <{$smarty.const._MI_HER_RESULTAT}>
+      </td>
+      <td class="odd" style="padding:10px 10px 10px 10px;" align='center'>
+        <{$smarty.const._MI_HER_POURCENTAGE}>
+      </td>
+    </tr>
+    <{/if}>
+    
+    <tr>
+      <td class="even" style="padding:10px 10px 10px 10px;" align='center'>
+        <{$reponse.idReponse}>
+      </td>
+      <td class="even" style="padding:10px 10px 10px 10px;" align='left'>
+        <{$reponse.nom}>
+      </td>
+      <td class="even" style="padding:10px 10px 10px 10px;" align='right'>
+        <{$reponse.sommeDeReponse}>
+      </td>
+      <td class="even" style="padding:10px 10px 10px 10px;" align='right'>
+        <{$reponse.pourcentage}>
+    </tr>
+  <{/foreach}>
+  
+  
+  <td class="odd" style="padding:10px 10px 10px 10px;" align='center'>
+    <{$smarty.const._MI_HER_ID}>
+  </td>
+  <td class="odd" style="padding:10px 10px 10px 10px;" align='right'>
+    <{$smarty.const._MI_HER_TOTAL}>    
+  </td>
+  <td class="odd" style="padding:10px 10px 10px 10px;" align='right'>
+    <{$totSomme}>
+  </td>
+  <td class="odd" style="padding:10px 10px 10px 10px;" align='right'>
+    <{$totPourcentage}>
+</tr>
+
+</table>
+
+</div>
+
+
+

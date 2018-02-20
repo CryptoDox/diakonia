@@ -1,0 +1,36 @@
+Bonjour,
+Voici mon premier plugin pour hermes pour le module newbb
+Il affiche les 15 derniers messages de tous les forums
+-------------------------------------------------
+Pour afficher les 15 messages les plus regarder des 2 derniers mois modifier la ligne 77
+." WHERE approved > 0 AND topic_time>$time ORDER BY topic_time DESC";
+en
+." WHERE approved > 0 AND topic_time>$time ORDER BY topic_views DESC";
+-------------------------------------------------
+Pour afficher les 15 messages les plus discuter des 2 derniers mois modifier la ligne 77
+." WHERE approved > 0 AND topic_time>$time ORDER BY topic_time DESC";
+en
+." WHERE approved > 0 AND topic_time>$time ORDER BY topic_replies DESC";
+--------------------------------------------------
+Christophe
+
+**********************************************************************
+Bonjour
+Ce qui est ci-dessus est obsolète, j'ai modifié le module pour qu'il soit paramètrable direcement dans l'onglet des 
+
+plugins de hermes.
+
+Paramètrs ajoutés:
+	- nombre maximum d'items (15 par défault) 
+	- nombre de période de recherche (nombrede mois précédents, 2 derniers mois par défauts)
+	- Source comme indiqué dans le commentaire de christophe:
+		derniers messages de tous les forums (valeur par défault)
+		derniersmessages les plus regarder
+		derniersmessages les plus discute
+
+			
+J'ai corrigé aussi le préfixe dans la requête.
+
+Merci à christophe pource plugin
+JJDAI
+------------------------------------------------------------------------

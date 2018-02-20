@@ -1,0 +1,273 @@
+[Config]
+Relative path=1
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.HideOutput=0
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+FileFormat=0
+[Project tree]
+_hermes
+	+hermes
+		-decorations
+			decorations\cls_deco_frame.php
+			decorations\cls_deco_bandeau.php
+			decorations\cls_deco_marquee.php
+			decorations\cls_deco_image.php
+			decorations\cls_deco_hrow.php
+			decorations\cls_deco_flagh.php
+			decorations\cls_deco_flagv.php
+			decorations\cls_deco_hardtext.php
+			decorations\cls_deco_hello.php
+		-versions
+			versions\her_2_10.php
+			versions\her_2_09.php
+			versions\her_2_10a.php
+			versions\her_2_14a.php
+			versions\her_2_17a.php
+			versions\her_2_18a.php
+			versions\her_2_19a.php
+			versions\her_2_20a.php
+			versions\her_2_21a.php
+			versions\her_2_26a.php
+			versions\her_2_26b.php
+			versions\her_3_04a.php
+			versions\her_3_05a.php
+			versions\her_4_07a.php
+		-doc
+			doc\GPL-english.htm
+			doc\admin_doc.php
+			doc\index.html
+			doc\hermes-french.htm
+			doc\GPL-french.htm
+			plugins\test_plugins\test_plugin_annonces.ini
+		-plugins
+			-newbb
+				plugins\newbb\language_english.inc
+				plugins\newbb\index.html
+				plugins\newbb\newbb.php
+				plugins\newbb\lisez-moi.txt
+				plugins\newbb\language_french.inc
+			+weblinks
+				plugins\weblinks\language_english.inc
+				plugins\weblinks\language_french.inc
+				plugins\weblinks\weblinks.php
+			-sqlquery
+				plugins\sqlplugin\language_french.inc
+				plugins\sqlplugin\language_english.inc
+				plugins\sqlplugin\sqlplugin.php
+			+mylinks
+				plugins\mylinks\mylinks.php
+				plugins\mylinks\language_french.inc
+				plugins\mylinks\language_english.inc
+			-template-generique
+				plugins\template-generique\generique-info-01a.html
+				plugins\template-generique\generique-recordset-01a.html
+				plugins\template-generique\generique-info-02a.html
+			-fluxrss
+				plugins\fluxrss\fluxrss.php
+				plugins\fluxrss\lastRSS.inc
+				plugins\fluxrss\language_french.inc
+				plugins\fluxrss\language_english.inc
+				plugins\fluxrss\intstall.txt
+				plugins\fluxrss\fluxRSS.txt
+				plugins\fluxrss\fluxrss2.php
+				plugins\fluxrss\plancheDetail.html
+				plugins\fluxrss\sommaire.html
+			+smartsection
+				plugins\smartsection\language_english.inc
+				plugins\smartsection\smartsection.php
+				plugins\smartsection\language_french.inc
+				plugins\smartsection\smartsectionCat.php
+				plugins\smartsection\smartsection.html
+				plugins\smartsection\diabolo.html.inc
+				plugins\smartsection\diabolo.html
+			-catads
+				plugins\catads\catads.php
+				plugins\catads\language_english.inc
+				plugins\catads\language_french.inc
+			+mydownloads
+				plugins\mydownloads\language_english.inc
+				plugins\mydownloads\mydownloads.php
+				plugins\mydownloads\language_french.inc
+			+polls
+				plugins\polls\polls.php
+				plugins\polls\language_french.inc
+				plugins\polls\language_english.inc
+			+news
+				plugins\news\language_french.inc
+				plugins\news\language_english.inc
+				plugins\news\news.php
+			+lexique
+				plugins\lexique\language_french.inc
+				plugins\lexique\language_english.inc
+				plugins\lexique\Lex_Termes.php
+				plugins\lexique\Lex_Lexique.php
+			-test_plugins
+				plugins\test_plugins\test_plugin_annonces.php
+				plugins\test_plugins\test_Plugin_actu.php
+				plugins\test_plugins\language_english.inc
+				plugins\test_plugins\language_french.inc
+				plugins\test_plugins\test_plugin_pasglop.php
+		-admin
+			admin\index.php
+			admin\index.html
+			admin\admin_header.php
+			admin\admin_lettre.php
+			admin\admin_texte.php
+			admin\admin_plugin.php
+			admin\her_action.php
+			admin\menu.php
+			admin\admin_fichier.php
+			admin\admin_doc.php
+			admin\admin_send.php
+			admin\admin_syndication.php
+			admin\admin_version.php
+			admin\admin_fluxrss.php
+			admin\admin_libelle.php
+			admin\admin_interface.php
+			admin\admin_log.php
+			admin\admin_stat.php
+			admin\admin_email.php
+			admin\admin_sondage.php
+			admin\admin_deco.php
+			admin\admin_stat_graph.php
+		-blocks
+			blocks\index.html
+			blocks\hermes_block_new.php
+			blocks\hermes_block_subscription.php
+		+class
+			class\cls_hermes_plugin.php
+			class\cls_hermes_texte.php
+			class\cls_hermes_fluxRSS.php
+			class\cls_hermes_lettre.php
+			class\cls_hermes_libelle.php
+			class\cls_hermes_mailingListe.php
+			class\cls_hermes_url.php
+			class\cls_hermes_sondage.php
+			class\cls_hermes_deco.php
+			class\cls_decoration.php
+		-images
+			-spin
+				images\spin\spinDown01.gif
+				images\spin\spinDown1.gif
+				images\spin\spinDown11.gif
+				images\spin\spinUp01.gif
+				images\spin\spinUp1.gif
+				images\spin\spinUp11.gif
+				images\spin\Thumbs.db
+				images\spin\zzspinDown11.gif
+				images\spin\zzspinUp11.gif
+			images\hermes_logo.png
+		+include
+			include\hermes_data.php
+			include\hermes_buildLetter.php
+			include\hermes_constantes.php
+			include\hermes_stat.php
+			include\hermes_generique.php
+		-js
+			js\index.html
+			js\hermes.js
+		-language
+			+english
+				-mail_template
+					language\english\mail_template\index.html
+					language\english\mail_template\lexique_newpost_notify.tpl
+				language\english\admin.php
+				language\english\blocks.php
+				language\english\index.html
+				language\english\main.php
+				language\english\modinfo.php
+			+french
+				-mail_template
+					language\french\mail_template\index.html
+					language\french\mail_template\lexique_newpost_notify.tpl
+				language\french\admin.php
+				language\french\blocks.php
+				language\french\index.html
+				language\french\main.php
+				language\french\modinfo.php
+			language\index.html
+		-log
+			log\log.txt
+		-ressources
+			-data
+				ressources\data\hermes-mpd-01.xml
+			-logo
+				ressources\logo\caducee.gif
+				ressources\logo\caducee-01.pspimage
+				ressources\logo\hermes_logo.png
+				ressources\logo\hermes2.jpg
+				ressources\logo\hermes3.jpg
+				ressources\logo\hermes4.jpg
+		+sql
+			sql\index.html
+			sql\JJD.sql
+			sql\mysql.sql
+		-templates
+			+letter
+				templates\letter\body_standard.htm
+				templates\letter\body_12121-100%-b.htm
+				templates\letter\body_12121-100%-a.htm
+				templates\letter\body_121-100%-a.htm
+				templates\letter\header_standard.htm
+				templates\letter\footer_standard.htm
+			+blocks
+				templates\blocks\index.html
+				templates\blocks\hermes_block_new.html
+				templates\blocks\hermes_block_subscription.html
+			templates\index.html
+			templates\hermes_lettre.html
+			templates\hermes_archive.html
+			templates\hermes_archiveDetail.html
+			templates\hermes_lettreDetail.html
+			templates\hermes_archiveIn.html
+			ucs.php
+			templates\hermes_showSondage.html
+			templates\hermes_listSondage.html
+		xoops_version.php
+		ucs.php
+		header.php
+		index.php
+		sondage.php
+		todo.txt
+		souscription.php
+		+_externe
+			..\jjd_tools\_common\include\js\jjd_tools.js
+			..\jjd_tools\_common\include\adminOnglet\adminOnglet.php
+			..\jjd_tools\_common\include\editor_functions.php
+			..\jjd_tools\_common\include\functions.php
+			..\jjd_tools\_common\include\constantes.php
+			..\jjd_tools\_common\include\version_functions.php
+			..\jjd_tools\_common\include\html_functions.php
+			..\jjd_tools\_common\include\spin\spin.php
+			..\jjd_tools\_common\include\commonList.php
+			..\jjd_tools\_common\include\debugTools.php
+			..\jjd_tools\_common\class\cls_jjd_ado.php
+			..\jjd_tools\_common\include\sysfile_functions.php
+			..\jjd_tools\_common\include\database_functions.php
+[Open project files]
+0=souscription.php
+1=include\hermes_data.php
+2=..\jjd_tools\_common\include\functions.php
+3=index.php
+4=xoops_version.php
+[Selected Project Files]
+Main=
+Selected=xoops_version.php
+[souscription.php]
+TopLine=252
+Caret=3,269
+[include\hermes_data.php]
+TopLine=2213
+Caret=17,2225
+[..\jjd_tools\_common\include\functions.php]
+TopLine=1599
+Caret=22,1616
+[index.php]
+TopLine=381
+Caret=31,400
+[xoops_version.php]
+TopLine=10
+Caret=34,38

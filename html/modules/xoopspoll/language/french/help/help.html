@@ -1,0 +1,87 @@
+<div id="help-template" class="outer">
+    <h1 class="head">Aide :
+        <a class="ui-corner-all tooltip" href="<{$xoops_url}>/modules/xoopspoll/admin/index.php"
+           title="Retour à l'administration de XOOPS Poll"> XOOPS Poll
+            <img src="<{xoAdminIcons home.png}>"
+                 alt="Retour à l'administration de XOOPS Poll" />
+        </a></h1>
+
+    <h4 class="odd">Description</h4>
+    <div style="margin-top: 1em; margin-bottom: 1em;"><p>Le module XOOPS Poll
+    peut être utilisé pour afficher des formulaires interactifs d'enquête sur votre
+    site. Chaque sondage peut afficher une question sur laquelle les visiteurs peuvent « voter ». Ceci
+    peut être un moyen efficace pour recueillir les commentaires de votre communauté. Les sondages peuvent être
+    configurés pour permettre des choix simples ou multiples et les visiteurs peuvent voir les
+    « résultats » par date.</p></div>
+
+    <h4 class="odd">Installer / Désinstaller</h4>
+    <div style="margin-top: 1em; margin-bottom: 1em;">
+    <p>Aucune mesure particulière n'est nécessaire, suivez le processus d'installation standard -
+    extraire le dossier de xoopspoll dans le répertoire ../modules. Installez le
+    module par Admin -&gt; Module Système -&gt; Modules.<br /><br />
+    Des instructions détaillées sur l'installation de modules sont disponibles dans le
+    <a href="http://goo.gl/adT2i">Manuel des opérations de XOOPS</a></p>
+    <p>Intégration supplémentaire à la fois avec le module Marquee et le SmartClone
+    Les modules XOOPS sont inclus dans le dossier extras. Copiez ces plugiciels vers
+    le dossier correspondant à ces modules pour activer le support pour le module de sondage XOOPS
+    En outre, un patch a été créé pour le module de forum (newbb)
+    pour soutenir cette version de sondage XOOPS. Remplacez les fichiers du module de forum existant
+    avec les fichiers trouvés dans le dossier ./extras/newbb.</p>
+    <p>Il est recommandé de supprimez les dossiers ./xoopspoll/extras et
+    ./xoopspoll/test de votre serveur internet, ils ne sont pas nécessaires pour
+    un fonctionnement normal.</p></div>
+
+    <h4 class="odd">Instructions d'installation</h4>
+    <div style="margin-top: 1em; margin-bottom: 1em;">
+    <p>Le module XOOPS Poll est très simple à configurer et à utiliser. En gros vous devez :</p>
+    <ul><li class='alignbottom'>Créer un ou plusieurs sondages pour que les gens votent sur (administration des sondages
+    -&gt; Votes)</li>
+    <li class='alignbottom'>Afficher les blocs de sondages quelque part sur votre site, ce n'est pas
+    nécessaire, car les gens peuvent également accéder à des sondages par le lien « Sondages » dans le menu principal
+    - mais l'affichage des blocs de sondages dans un endroit bien en vue encouragera les gens à voter)</li>
+    <li class='alignbottom'>Veillez à ce que les groupes d'utilisateurs concernés disposent des droits d'accès pour :
+    <ul type='A'><li style='vertical-align: bottom;'>le module de sondages et</li>
+    <li class='alignbottom'>les blocs de sondages afin qu'ils puissent les voir et voter. Des
+    instructions détaillées sur la configuration des droits d'accès pour les groupes d'utilisateurs sont
+    disponibles sur le <a href="http://goo.gl/adT2i">Manuel des Opérations de 
+    XOOPS</a></li></ul></li>
+    <li class='alignbottom'>La plupart des fonctions de gestion des sondages existants se trouvent dans l'administration
+    des sondages -&gt; Sondages.</li></ul></div>
+
+    <h4 class="odd">Information Générale</h4>
+    <div style="margin-top: 1em; margin-bottom: 1em;">
+    <h5>Résultats par courriels</h5>
+    <p>XOOPS Poll utilise la fonctionnalité de préchargement XOOPS pour lancer l'envoi des résultats par messagerie. Une fois 
+    Par session d'utilisateur la base de données sera vérifiée pour voir si des courriels doivent être envoyés vers les 
+    auteurs du sondage pour leur faire savoir que le sondage a expiré (si ils ont choisi d'être notifié).
+    </p>
+    <h5>Visibilité du sondage</h5>
+    <p>XOOPS Poll a plusieurs options administratives pour contrôler la visibilité des résultats du sondage.
+    <dl>
+    <dt>ne jamais cacher les résultats</dt>
+    <dd>- les résultats sont toujours visibles pour les utilisateurs</dd>
+    <dt>ne masquer les résultats qu'après le vote</dt>
+    <dd>- permet de masquer les résultats d'un utilisateur jusqu'à ce qu'ils aient voté</dd>
+    <dt>masquer les résultats jusqu'à l'expiration de sondage</dt>
+    <dd>- permet de masquer les résultats de tous les utilisateurs (qu'ils aient voté ou non) jusqu'à l'expiration du sondage</dd>
+    <dt>toujours cacher les résultats</dt>
+    <dd>- les utilisateurs ne seront pas en mesure de voir les résultats. Les résultats ne sont visibles qu'aux administrateurs dans le panneau d'administration</dd>
+    </dl>
+    </p>
+    <h5>Vote de l'utilisateur</h5>
+    <p>Il existe plusieurs contrôles pour empêcher les utilisateurs de voter plusieurs fois dans un sondage.
+    Si le vote anonyme est autorisé dans certains cas, des utilisateurs malveillants peuvent trouver des façons de voter plus 
+    d'une fois par sondage en contournant les contrôles de validation, mais le nombre de cas comme ça 
+    devrait être considérablement réduit par les contrôles prévus. Voici un résumé des contrôles effectués 
+    par le module pour réduire le vote double / invalide :
+    <ul>
+    <li>interdire le vote sur les sondages périmés ou inactifs</li>
+    <li>les utilisateurs enregistrés ne peuvent voter qu'une fois par sondage</li>
+    <li>Les électeurs non inscrits ne peuvent voter qu'une fois par sondage, par ordinateur (si le non vote est autorisé)</li>
+    </ul>
+    </p>
+    </div>
+    <h4 class="odd">Tutoriel</h4>
+    <div style="margin-top: 1em; margin-bottom: 1em;"><p>Vous pouvez trouver un tutoriel plus détaillé 
+    <a href="http://goo.gl/bxYAI">ici</a></p></div>
+</div>

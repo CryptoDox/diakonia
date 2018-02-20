@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Slided.js (with IE 6/7 support)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-language" content="en">
+	<link rel="bookmark" type="text/html" title="Slided.js" href="http://www.netzgesta.de/slided/">
+	<meta name="Author" lang="en" content="slided.netzgesta.de - Christian Effenberger">	<meta name="Publisher" lang="en" content="www.netzgesta.de">	<meta name="Copyright" lang="en" content="www.netzgesta.de - Christian Effenberger">	<meta name="Generator" lang="en" content="Christian Effenberger">
+	<meta name="Description" lang="en" content="Slided.js 1.1 allows you to add slide frames and also shadow to images on your webpages through unobtrusive javascript">
+	<meta name="Keywords" lang="en" content="slided.js,images,slide,frame,shading,shadow,unobtrusive javascript,IE6/7,Mozilla,Firefox,Opera,Safari">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<script type="text/javascript" src="slided.js"></script>
+	<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+a { color: blue; font-style:italic; text-decoration:none; }
+tt {color: green;}
+body { background: url(images/backgrnd.jpg) white; color: black; font-family: Georgia; line-height: 1.5; margin: 0.5em 1em;}
+h2 { line-height: 1; }
+b {color: #993333;}
+.demo { float: left; padding: 10px; }
+.logo { position: relative; width: 400px; height: 120px; white-space: nowrap;}
+#guru { padding: 4px; width: 99%; height: auto; text-align: center; background-color: black; }
+#guru div { border: solid 3px red; padding: 4px; font-family: monospace; font-size: 1.25em; width: auto; height: auto; color: red; text-align: center; text-decoration: blink; }
+#header { margin-bottom: 0; font-weight: normal; font-style: italic; color: gray; }
+</style>
+</head>
+<body><noscript><div id="guru" title="By this you can recognize the Amiga fan!"><div><b>Guru Meditation</b> - With deactivated JavaScript: Images stay unmodified!</div></div></noscript>
+
+<table summary="">
+<tr><td valign="top" style="padding-bottom: 1em; white-space: nowrap;"><img src="images/slid.jpg" border="0" class="slided ibgcolor666666 igradient555555" alt="" /><img src="images/edjs.jpg" border="0" class="slided ibgcolor666666 igradient555555" alt="" /></td>
+<td style="padding: 0 0 0 15px; margin: 0; line-height: 1.5; font-style: italic;">
+<p><strong>Slided.js 1.1</strong> allows you to add slide frames and shadow to images on your webpages (alternatively: <a href="http://filmed.netzgesta.de">filmed.js</a>). It uses unobtrusive javascript to keep your code clean.</p>
+<p>It works in all the major browsers - Mozilla Firefox 1.5+, Opera 9+, IE6+ and Safari. On older browsers, it'll degrade and your visitors won't notice a thing.</p>
+<p><small><a href="http://lab.netzgesta.de/" title="showcase">CVI-lab</a>: Get a fast impression of the effects and their illustration qualities.</small></p>
+</td></tr>
+</table>
+
+<h2>Setting Up</h2>
+
+<p>Include "slided.js" into your webpage.</p>
+
+<code>
+&lt;script type="text/javascript" src="<tt>slided.js</tt>"&gt;&lt;/script&gt;
+</code>
+
+<h2>Using It</h2>
+
+<p>To make it look like a slide just add a class="<tt>slided</tt>" to the image <em>(minimum dimension: 80x? /?x80)</em>.<br />
+<small>To get an aspect ratio of 1:1 the larger picture dimension defines the width and height. Therefor the needed space of the
+canvas element will grow if the aspect ratio of the picture doesn't fit 1:1.</small></p>
+<h2>Classes</h2>
+
+<ul>
+<li>Initialisation class "<tt>slided</tt>"</li>
+<li><small><em>vary the shading by adding ishade followed by the desired <b>opacity</b> in percent:</em></small><br>
+Shading opacity class "<tt>ishade</tt>" - min=0 max=100 default=50</li>
+<li><small><em>vary the shadow by adding ishadow followed by the desired <b>opacity</b> in percent:</em></small><br>
+Shadow opacity class "<tt>ishadow</tt>" - min=0 max=100 default=40</li>
+<li><small><em>vary the shadow by adding noshadow:</em></small><br>
+Noshadow class "<tt>noshadow</tt>" - default=false</li>
+<li><small><em>vary the decoration by adding nocircles:</em></small><br>
+Nocircles class "<tt>nocircles</tt>" - default=false</li>
+<li><small><em>vary the frame by adding ibgcolor followed by the desired <b>color</b> as hex:</em></small><br>
+Frame color class "<tt>ibgcolor</tt>" - min=000000 max=ffffff default=0</li>
+<li><small><em>vary the frame by adding igradient followed by the desired <b>color</b> as hex:</em></small><br>
+Gradient color class "<tt>igradient</tt>" - min=000000 max=ffffff default=0</li>
+<li>Default gradient direction is diagonally</li>
+<li><small><em>vary the color gradient direction by adding horizontal:</em></small><br>
+Horizontal gradient class "<tt>horizontal</tt>" - default=false</li>
+<li><small><em>vary the color gradient direction by adding vertical:</em></small><br>
+Vertical gradient class "<tt>vertical</tt>" - default=false</li>
+</ul>
+
+<h2>Scripting</h2>
+
+<p>If you want flexibility, use "<b>cvi_slide_lib.js</b>" instead of "<b>slided.js</b>". 
+You can make your images respond to user actions (e.g. changing one or more options when the image is hovered over).</p>
+<dl>
+	<dt><strong>Set</strong> defaults using Javascript</dt>
+	<dd>
+		<code>
+		cvi_slide.defaultShade = 50; <tt>//INT 0-100 (% opacity)</tt><br>
+		cvi_slide.defaultShadow = 40; <tt>//INT 1-100 (% opacity)</tt><br>
+		cvi_slide.defaultColor = 0; <tt>//STR '#000000'-'#ffffff' or 0</tt><br>
+		cvi_slide.defaultColor2 = 0; <tt>//STR '#000000'-'#ffffff' or 0</tt><br>
+		cvi_slide.defaultGradient = 'd'; <tt>//STR  'd|h|v'-'diagonally|horizontal|vertical'</tt><br>
+		cvi_slide.defaultNoshadow = false;	<tt>//BOOLEAN</tt><br>
+		cvi_slide.defaultNocircles = false;	<tt>//BOOLEAN</tt>
+		</code>
+  		<p></p>
+	</dd>
+	<dt><strong>Add</strong> images using Javascript</dt>
+  	<dd>
+  		<code>cvi_slide.add(<tt>image</tt>, <tt>options</tt>);</code><br><small>
+		<tt>image</tt> should be an image element: document.getElementById(<b>"myimg"</b>)<br>
+		<tt>options</tt> can contain one or more values: {<tt>shadow</tt>: <b>value</b>, <tt>shade</tt>: <b>value</b>, <tt>color</tt>: <b>value</b>, <tt>color2</tt>: <b>value</b>, <tt>gradient</tt>: <b>value</b>, <tt>noshadow</tt>: <b>value</b>, <tt>nocircles</tt>: <b>value</b>}</small>
+		<dl><dt>Example:</dt>
+		<dd>
+			<code>cvi_slide.add(document.getElementById(<b>"myimg"</b>), { <tt>shadow</tt>: <b>75</b>, <tt>shade</tt>: <b>20</b> });</code>  		</dd></dl>
+  		<p></p>
+  	</dd>
+	<dt><strong>Modify</strong> images using Javascript</dt>
+  	<dd>
+  		<code>cvi_slide.modify(<tt>image</tt>, <tt>options</tt>);</code><br>
+  		<small>If the image has already an effect but a <tt>option</tt> value has changed, the effect will be changed accordingly.</small><br>
+		<dl><dt>Example:</dt>
+		<dd>
+			<code>cvi_slide.modify(document.getElementById(<b>"myimg"</b>), { <tt>noshadow</tt>: <b>true</b> });</code>
+  		</dd></dl>
+		<p></p>
+  	</dd>
+	<dt><strong>Remove</strong> effect from an image using Javascript</dt>
+	<dd>
+		<code>cvi_slide.remove(<tt>image</tt>);</code>
+  		<p></p>
+	</dd>
+</dl>
+</div>
+
+<h2>Demonstration</h2>
+
+<p style="clear: left">Shows some of the things "slided.js" does.<br>&nbsp;&nbsp;&nbsp;&nbsp;4 images with class = "<tt>slided ibgcolorXXXXXX</tt>" and different frame colors.</p>
+<div class="demo"><img src="images/test.jpg" width="150" height="100" class="slided" title="no frame color equals transparency" alt="" /></div>
+<div class="demo"><img src="images/test.jpg" width="150" height="100" class="slided ibgcolore0e0e0" alt="" /></div>
+<div class="demo"><img src="images/test.jpg" width="150" height="100" class="slided ibgcolor666666" alt="" /></div>
+<div class="demo"><img src="images/test.jpg" width="150" height="100" class="slided ibgcolor000000" alt="" /></div>
+<p style="clear: left">&nbsp;&nbsp;&nbsp;&nbsp;4 images with class = "<tt>slided ibgcolorXXXXXX igradientXXXXXX</tt>" and different gradient directions</p>
+<div class="demo"><img src="images/example.jpg" width="150" height="101" class="slided ibgcolor99ccff" title="only frame color means no gradient" alt="" /><p>no gradient</p></div>
+<div class="demo"><img src="images/example.jpg" width="150" height="101" class="slided ibgcolor99ccff igradient6699aa" title="onClick event" onClick="alert('ID='+this.id);" alt="" id="landscape_image" /><p>diagonally</p></div>
+<div class="demo"><img src="images/example.jpg" width="150" height="101" class="slided ibgcolor99ccff igradient6699aa horizontal" title="onClick event" onClick="alert('ALT=\''+this.alt+'\'');" alt="beautiful landscape" /><p>horizontal</p></div>
+<div class="demo"><img src="images/example.jpg" width="150" height="101" class="slided ibgcolor99ccff igradient6699aa vertical" title="onClick event" onClick="alert('Slide dimension '+this.width+'x'+this.height);" alt="" /><p>vertical</p></div>
+<p style="clear: left;"></p>
+<div class="demo"><img src="images/girl.jpg" class="slided ibgcolord0d0d0 igradiente0e0e0 noshadow nocircles" alt="" /><p style="clear: left">"<tt>noshadow nocircles</tt>"</p></div>
+<div class="demo"><img src="images/girl.jpg" width="90" height="120" class="slided ibgcolor666666 ishadow20" alt="" /><p style="clear: left">"<tt>ishadow20</tt>"</p></div>
+<div class="demo"><img src="images/girl.jpg" width="68" height="80" class="slided ibgcolorffffff ishade01" alt="" /><p style="clear: left">"<tt>ishade01</tt>"</p></div>
+<div class="demo"><img src="images/girl.jpg" class="slided ibgcolor666666 ishade75" alt="" /><p style="clear: left">"<tt>ishade75</tt>"</p></div>
+<p style="clear: left;"></p>
+
+<h2>Why use Javascript Image Slides?</h2>
+
+<ul>
+<li>Fast and easy to implement. Just add class="slided" to the image and your good to go.</li>
+<li>Don't need to spend time in an image editor creating images with effects.</li>
+<li>Works really well with forum avatars. Doesn't require additional server work.</li>
+<li>It's dead easy to change the attributes of the images.</li>
+<li>Free of charge use on non-commercial and private web sites.</li>
+</ul>
+
+<p>In older browsers, the script degrades and your visitors won't notice a thing.</p>
+
+<h2>Restrictions</h2>
+
+<p>Opera do not support printing of canvas.</p>
+
+<h2>History</h2>
+
+Version 1.1<ul><li>Added scriptable lib version <b>cvi_slide_lib.js</b></li></ul>
+
+Version 1.0<ul><li>Initial Release</li></ul>
+
+<h2>License</h2>
+
+<p>Slided.js is distributed under this <a href="LICENSE.txt">LICENSE</a>. License permits free of charge use on non-commercial and private web sites only. <br>There is also a <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#105;&#110;&#102;&#111;&#064;&#110;&#101;&#116;&#122;&#103;&#101;&#115;&#116;&#097;&#046;&#100;&#101;">Commercial Software License</a> available.</p>
+
+<p><strong>Images used are copyrighted and are used for demonstration only.</strong></p>
+
+<p><a href="http://cvi.netzgesta.de/">cvi.netzgesta.de</a>&nbsp;&nbsp;also visit&nbsp;&nbsp;<a href="http://lab.netzgesta.de/">CVI-lab</a>, <a href="http://s5.netzgesta.de/">S5 Reloaded</a> and <a href="http://ajaxfilmdb.sourceforge.net/">AJAX-FilmDB</a></p>
+
+</body>
+</html>

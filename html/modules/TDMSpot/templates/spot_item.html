@@ -1,0 +1,61 @@
+<!--affichage des articles-->
+<div id="content">	
+<table  cellspacing="0"><tr><td>
+			
+		<{foreach item=tpitem from=$tpitem}>
+		<div class="outer" style="padding:5px;">		
+		
+		<div style="float: right; padding:5px;">
+		<{$tpitem.moyen}>
+		</div>
+			
+			<div class="itemTitle">
+			<a href="<{$tpitem.cat_link}>"><{$tpitem.cat_title}></a> : <{$tpitem.title}>
+			</div>
+	
+			 <div class="itemInfo">	
+			 <span class="itemPoster"><{$smarty.const._MD_SPOT_POSTEDBY}> <{$tpitem.postername}></span>,
+			 <span class="itemPostDate"><{$smarty.const._MD_SPOT_LE}> <{$tpitem.indate}></span>
+			 (<span class="itemStats"><{$tpitem.hits}> <{$smarty.const._MD_SPOT_HITS}></span>)
+			  </div>
+			   <{if $tpitem.file}>
+			   <span style="background: url(<{$smarty.const.TDMSPOT_IMAGES_URL}>/file.png) no-repeat left; padding-left: 15px;">&nbsp;<a href="./file.php?itemid=<{$tpitem.id}>" rel="nofollow"><{$tpitem.file}></a></span>
+			  <{/if}>
+			  <hr>
+			  <div class="itemBody">
+	
+		<{if $tpitem.img}>	
+		<div style="float: right; padding:5px;">
+		<{$tpitem.img}>
+		</div>
+		<{/if}>
+			
+			
+			  
+			  <p class="itemText"><{$tpitem.text}></p>
+			  <br style="clear: both;"/>
+			  </div>
+		
+				
+			<div class="itemFoot">
+			<{if $perm_vote}>
+			<a href="javascript:;"><img height="16px" src="<{$smarty.const.TDMSPOT_IMAGES_URL}>/good-mark.png" onclick="AddVote(<{$tpitem.id}>, '<{$smarty.const.TDMSPOT_URL}>');return false;" title="<{$smarty.const._MD_SPOT_VOTEADD}>"></a> <a href="javascript:;"><img height="16px" src="<{$smarty.const.TDMSPOT_IMAGES_URL}>/bad-mark.png" onclick="RemoveVote(<{$tpitem.id}>, '<{$smarty.const.TDMSPOT_URL}>');return false;" title="<{$smarty.const._MD_SPOT_VOTEREMOVE}>"></a>
+			-
+			<{/if}>
+			<span style="background: url(<{$smarty.const.TDMSPOT_IMAGES_URL}>/chart.png) no-repeat left; padding-left: 15px;">&nbsp;<a href="<{$tpitem.link}>" rel="nofollow"><{$smarty.const._MD_SPOT_NOTES}> <{$tpitem.counts}>/<{$tpitem.votes}> <{$smarty.const._MD_SPOT_VOTES}></a></span> 
+			- 
+			<span style="background: url(<{$smarty.const.TDMSPOT_IMAGES_URL}>/comment.png) no-repeat left; padding-left: 15px;">&nbsp;<a href="<{$tpitem.link}>" rel="nofollow"><{$smarty.const._MD_SPOT_COMMENTS}> <{$tpitem.comments}></a></span>
+			- 
+			<{if $tpitem.more}>
+			<span style="background: url(<{$smarty.const.TDMSPOT_IMAGES_URL}>/text.png) no-repeat left; padding-left: 15px;">&nbsp;<a href="<{$tpitem.link}>" rel="nofollow"><{$smarty.const._MD_SPOT_MORETEXT}> <{$tpitem.more}></a></span>
+			- 
+			<{/if}>
+			<span class="itemPermaLink"><span style="background: url(<{$smarty.const.TDMSPOT_IMAGES_URL}>/about.png) no-repeat left; padding-left: 15px;">&nbsp;<a href="<{$tpitem.link}>" rel="nofollow"><{$smarty.const._MD_SPOT_MORE}></a></span></span>
+			</div>
+
+			</div>
+			<br />
+				<{/foreach}>
+
+</td></tr></table>	
+</div>

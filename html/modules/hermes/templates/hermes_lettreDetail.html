@@ -1,0 +1,57 @@
+
+    <table  width="70%" class='outer'>
+      
+
+<tr>
+
+    <!-- 
+    <td width="20px"  class="even" style="text-align:right"  ></td>    
+     
+    <input type="checkbox" name="chkLettre_<{$lettre.idLettre}> " <{$lettre.checked}> value="ON">    
+    -->
+    <!-- affichage de la liste state -->
+
+      <INPUT TYPE="hidden" NAME="idLettre_<{$lettre.idLettre}>" VALUE="<{$lettre.idLettre}>">    
+
+    
+    <{if $showFormat == 1}>
+    <{/if}>  
+    
+     <td width="30px"  class="odd" style="text-align:right"  >
+          <{$lettre.idLettre}> 
+    </td>
+      
+    <td  width="20px" class="even">
+        <{$lettre.obList}>
+    </td>
+    
+    
+    <td width="100px"  class="even" >
+          <{$lettre.dateCourte}> 
+    </td>
+
+
+    <td width="250px"  class="even"  >
+          <{$lettre.nom}> 
+    </td>
+    
+    <td class="even" style="text-align:left; border:0">
+        <{$lettre.libelle}>
+    </td>
+    
+</tr> 
+ 
+<tr>
+    <td width="20px"  class="odd" style="text-align:left"  >
+           
+    </td>
+    <td width="20px"  class="odd" style="text-align:left"  >
+           
+    </td>
+
+    <td width="250px"  class="odd" style="text-align:left"  colspan='3'>
+          <{$lettre.description}> 
+    </td>
+</tr>
+
+    </table> 

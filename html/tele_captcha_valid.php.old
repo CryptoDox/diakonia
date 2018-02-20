@@ -1,0 +1,50 @@
+<?php 
+<!doctype html>
+<html lanf="fr">
+<head>
+<meta charset="UTF-8" />
+<script scr='/jquery/jquery-3.2.1.js'></script>
+<script scr="https://authedmine.com/lib/captcha.min.js" async></script>
+</head>
+<body>
+/* Contexte */
+
+/* Variables */
+
+/* Fonction telecharge */
+echo 'ca marche?';
+/* Fonction de verification du token */
+//$post_data = [
+//	'secret' => "Pr1Wtpi02Iw4gMfqWZkJLz6sJHD4dQyS", // <- Your secret key
+//	'token' => $_POST['coinhive-captcha-token'],
+//	'hashes' => 1024
+//];
+//
+//$post_context = stream_context_create([
+//	'http' => [
+//		'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+//		'method'  => 'POST',
+//		'content' => http_build_query($post_data)
+//	]
+//]);
+//
+//$url = 'https://api.coinhive.com/token/verify';
+//$response = json_decode(file_get_contents($url, false, $post_context));
+//
+//if ($response && $response->success) {
+//	// All good. Token verified!
+//printf ('Captcha verification OK!');
+//}
+//break;
+/* CAS validation OK */
+/* Renvoi ver le script de download */
+//} else {
+/* CAS validation NIET */
+/* Message à l'utilateur "Echec" Veuillez reesayer en veillant...! */
+//printf ('le captcha n a pas été validé veuillez recommencer en veillant bien à 1 désactiver votre bloqueur de Pub de toutes façons inutile');
+//printf ('puisqu il n y a pas de Pub 2 Activer JavaScript 3 Valider le Captcha et attendre la fin du Proof of Work il faut que la barre bleue aille au bout).');
+//break;
+//}
+</body>
+</html>
+?>

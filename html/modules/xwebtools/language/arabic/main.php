@@ -1,0 +1,150 @@
+<?php
+/********************************************************/
+/* XOOPS Web Tools ver 1.1                              */
+/* 30/4/2008                                            */
+/* By: Mowaffak (www.arabxoops.com)                     */
+/* based on PHP-Nuke Tools Ver 3.0 by Disipal           */
+/* Author website: www.disipal.net                      */
+/********************************************************/
+
+define("_dis","<b>ÈÑäÇãÌ ÃÏæÇÊ ÊØæíÑ ÇáãæÇŞÚ - ÇáÅÕÏÇÑÉ 1.1</b>");
+# START - DO NOT REMOVE OR EDIT THE FOLLOWING COPYRIGHT LINES
+define("_discopy","ÈÑäÇãÌ ÃÏæÇÊ ÊØæíÑ ÇáãæÇŞÚ - ÇáÅÕÏÇÑÉ 1.1<br>ÈæÇÓØÉ <a href=\"http://www.arabxoops.com\" target=\"_blank\">arabxoops</a> - ÔßÑ ÎÇÕ áãæŞÚ <a href=\"http://www.disipal.net\" target=\"_blank\">disipal</a>");
+# END - COPYRIGHT LINES ENDS HERE - THANKS!
+define("_SELEC","ÊÍÏíÏ&nbsp;Çáßá");
+define("_CLEAR","ãÓÍ");
+define("_MAKEMOD","Êßæíä ÈÑäÇãÌ áÒææÈÓ");
+define("_MODULEC","Êßæíä ÈÑäÇãÌ áÒææÈÓ");
+define("_MODINFO","<BR><font class=\"content\">ÇäŞÑ Úáì Êßæíä áÚÑÖ ÇáßæÏ ÇáÎÇÕ ÈÈÑäÇãÌ ÒææÈÓ</font>");
+define("_MAKEBLOK","Êßæíä Èáæß áÒææÈÓ");
+define("_MODHELP","ÇáãÓÇÚÏÉ İí Êßæíä ÈÑäÇãÌ áÒææÈÓ");
+define("_BLKHELP","ÇáãÓÇÚÏÉ İí Êßæíä Èáæß áÒææÈÓ");
+define("_BLOKINFO","<BR><font class=\"content\">ÇäŞÑ Úáì Êßæíä áÚÑÖ ÇáßæÏ ÇáÎÇÕ ÈÈáæß ÒææÈÓ</font>");
+define("_CONVERT","ÊÍæíá");
+define("_CONINFO","<BR><font class=\"content\">ÇäŞÑ&nbsp;Úáì&nbsp;ÊÍæíá</font>");
+define("_PASTE","ÃáÕŞ ÇáßæÏ åäÇ");
+define("_BLOCKC","Êßæíä Èáæß áÒææÈÓ");
+define("_HTMLC","HTML Åáì PHP");
+define("_EDITORC","ãÍÑÑ HTML");
+define("_END","ÊŞİíá");
+define("_PREV","ãÚÇíäÉ");
+define("_START","äÇİĞÉ ÈÏÁ");
+define("_ABOUT","Íæá");
+define("_ITAL","ãÇÆá");
+define("_BOL","ÛáíÙ");
+define("_UNDER","ãÓØÄ");
+define("_PRE","ãÌåÒ");
+define("_CENT","ÊæÓíØ");
+define("_HO","ÔÑíØ ÃİŞí");
+define("_LINE","ÎØ İÇÕá");
+define("_PA","İŞÑÉ İÇÕáÉ");
+define("_FORMA","ÊåíÆÉ");
+define("_MODE","ÇáæÖÚ");
+define("_HELP","ãÓÇÚÏ");
+define("_HELPT","ãÚáæãÇÊ Íæá ÇáãßæäÇÊ");
+define("_PROMPT","ÅÚáÇãí");
+define("_PROMPTT","ÃÚáãäí ÈÇáãÚáæãÇÊ áßí<br>  ÃÖÚåÇ İí ÇáãßæäÇÊ æ ÃßÊÈ ÚäåÇ");
+define("_BASIC","ÃÓÇÓí");
+define("_BASICT","ÃßÊÈ İŞØ ÇáãßæäÇÊ İí<br>  ÎÇäÉ ÇáßÊÇÈÉ");
+define("_HEADIN","ÑÄæÓ ÇáÚäÇæíä");
+define("_LINKS","ÇáÑæÇÈØ");
+define("_OP","İÊÍ");
+define("_TEXT","äÕ");
+define("_CLO","ÅÛáÇŞ");
+define("_ANC","ÑÇÈØ");
+define("_LISTS","ŞæÇÆã");
+define("_ITE","ÚäÕÑ");
+define("_TERM","ãÕØáÍ");
+define("_DEF"," ÊÚÑíİ");
+define("_IMAGS","ÕæÑ");
+define("_IMAG","ÕæÑÉ");
+define("_ALIG","ãæÖÚ");
+define("_TOP","ÃÚáì");
+define("_MIDDLE","æÓØ");
+define("_BOTTOM","ÃÓİá");
+define("_TSCON","ááÍİÙ: ÃäŞÑ Úáì ÒÑ ãÚÇíäÉ Ëã Óæİ ÊÙåÑ áß äÇİĞÉ ÌÏíÏÉ¡ ÃÎÊÑ ÍİÙ ÈÇÓã ãä ŞÇÆãÉ ãáİ.");
+define("_POPUP","ÕÇäÚ ÇáäæÇİĞ");
+define("_STEP","ÇáÎØæÉ ÇáÃæáì:");
+define("_STEPP"," ÇÖÈØ ÇáãÙåÑ ÇáÚÇã ááäÇİĞÉ ÇáãäÈËŞÉ æ Şã ÈÊÌÑÈÊåÇ ÈÇáÖÛØ Úáì ÒÑ ÇáãÚÇíäÉ ÇáİæÑíÉ áãÔÇåÏÉ ßíİ ÊÈÏæ ÇáäÇİĞÉ ÇáãäÈËŞÉ");
+define("_TOOLBAR","ÔÑíØ ÇáÃÏæÇÊ: ");
+define("_LOCATION","ÔÑíØ ÇáãæÖÚ: ");
+define("_DIRECT","ÔÑíØ ÇáãÓÇÑ:");
+define("_STATUSBA","ÔÑíØ ÇáÍÇáÉ: ");
+define("_SCROLL","ãÄÔÑ ÇáÊãÑíÑ: ");
+define("_MENUBAR","ÔÑíØ ÇáŞÇÆãÉ: ");
+define("_RESI","ŞÇÈá áÊÛííÑ ÇáÍÌã¿ ");
+define("_LIVE","ãÚÇíäÉ İæÑíÉ");
+define("_STTEP","ÇáÎØæÉ ÇáËÇäíÉ:");
+define("_STTEPP","  åá ÊÑíÏ Ãä ÊİÊÍ ÇáäÇİĞÉ ÈÔßá ÊáŞÇÆí Ãæ ÈÚÏ ÇáäŞÑ Úáì ÑÇÈØ äÕí ¿<br>");
+define("_AYTO","ÊáŞÇÆí");
+define("_TEXTLI","ÑÇÈØ äÕí");
+define("_GENERA","ÊäİíĞ ÇáÚãáíÉ");
+define("_RESET","ãÓÍ");
+define("_SCTGC","ÈÈÓÇØÉ Şã ÈäÓÎ ÇáßæÏ ÇáäÇÊÌ æ áÕŞå İí  &lt;BODY&gt İí ÇáÕİÍÉ ÇáãØáæÈÉ.");
+define("_CTPF","ÎíÇÑÇÊ ÅÖÇİíÉ:");
+define("_TCTD","-áÊÛííÑ ãÍÊæì ÇáäÇİĞÉ Şã ÈÊÛííÑ ÇáãÊÛíÑ &quot;popurl&quot; İí ÏÇáÉ openpopup()</small><br><small>-áÊÚÏíá ÅÑÊİÇÚ æ ÚÑÖ ÇáäÇİĞÉ ÇáãäÈËŞÉ¡ Şã ÈÊÚÏíá Şíã ÇáÅÑÊİÇÚ æ ÇáÚÑÖ İí ÏÇáÉ openpopup()");
+define("_SCROLLC","ãäÓŞ ãÄÔÑ ÇáÊãÑíÑ");
+define("_HEXC","ÌÏæá ÑãæÒ ÇáÃáæÇä");
+define("_HEXV","ãäÓŞ ÇáÃáæÇä");
+define("_RED","ÃÍãÑ:");
+define("_GREEN","ÃÎÖÑ:");
+define("_BLUE","ÃÒÑŞ:");
+define("_RGB","RGB: ");
+define("_METAC","ÕÇäÚ ÇáãíÊÇÊÇÛ");
+define("_MTIT","åäæÇä ÇáÕİÍÉ:");
+define("_AUTHOR","ÇáãÄáİ:");
+define("_SUBJ","ÇáãæÖæÚ:");
+define("_DESCRR","ÇáæÕİ:");
+define("_KEYW","ÇáßáãÇÊ ÇáãİÊÇÍíÉ:");
+define("_GENER","ÇáÈÑäÇãÌ:");
+define("_LANGUA","ÇááÛÉ:");
+define("_EXPR","ÇáÅäÊåÇÁ:");
+define("_ABSTRA","ÇáÎáÇÕÉ:");
+define("_COPYRIGHTT","ÍŞæŞ ÇáäÔÑ:");
+define("_DESIGN","ÇáãÕãã:");
+define("_PUBLIS","ÇáäÇÔÑ:");
+define("_RA","ãÚÇæÏÉ ÇáÒíÇÑÉ ÈÚÏ:");
+define("_DISTR","ÇáÏáíá ÇáãÑÌÚí:");
+define("_GLOBAL","1. ÚÇáãí");
+define("_LOCAL","2. ãÍáí");
+define("_IU","3. ãÓÊÎÏã Ïæáí");
+define("_ROBOTS","ÇáİåÑÓÉ:");
+define("_ALLR","1. Çáßá");
+define("_NONEE","2. ÈÏæä");
+define("_IND","3. ÇáÑÆíÓíÉ");
+define("_NIND","4. ÈÏæä ÇáÑÆíÓíÉ");
+define("_FOL","5. ÇáÏÇÎáíÉ");
+define("_NFOL","6. ÈÏæä ÇáÏÇÎáíÉ");
+define("_CREATMT","Êßæíä ÇáãíÊÇÊÇÛ");
+define("_CLEARALL","ãÓÍ Çáßá");
+define("_INAST","ÊÚáíãÇÊ:");
+define("_SIML"," ÃäÓÎ ÇáÃÓØÑ ÇáÊÇáí ãä ÇáßæÏ æ ÃÖİåÇ Èíä <HEAD> æ </HEAD> İí ÕİÍÊß.");
+define("_SELE","Select One");
+define("_HTMLASP","HTML Åáì ASP");
+define("_HTMLJS","HTML Åáì Javascript");
+define("_HTMLJSP","HTML Åáì JSP");
+define("_HTMLPERL","HTML Åáì Perl");
+define("_HTMLSWS","HTML Åáì SWS");
+
+
+define("_PREVIEWER","ÇáãÚÇíäÉ");
+define("_SCODER","ÊÔİíÑ ÇáãÕÏÑ");
+define("_HTMLCODER","HTML ÊÔİíÑ");
+define("_URLCODER","ÊÔİíÑ ÚäæÇä ÇáãæŞÚ");
+define("_EMAILCODER","ÊÔİíÑ ÇáÈÑíÏ ÇáÅáßÊÑæäí");
+define("_ROTCODER","Rot-13 ÊÔİíÑ");
+define("_DEDUPER","ÅÒÇáÉ ÇáÊßÑÇÑ");
+define("_ENCODE","ÊÔİíÑ");
+define("_DECODE","İß ÇáÊÔİíÑ");
+define("_ROTI","ÃÏÎá ÇáäÕ Ëã ÃäŞÑ Úáì ÊÔİíÑ");
+define("_YEA","ÈÑíÏß ÇáÅáßÊÑæäí:");
+define("_EEA","ÊÔİíÑ ÇáÈÑíÏ ÇáÅáßÊÑæäí:");
+define("_EMAILI","åĞå ÇáÃÏÇÉ ÊÓãÍ áß ÈÊÔİíÑ ÈÑíÏß ÇáÅáßÊÑæäí Úä ØÑíŞ ÅÓÊÎÏÇã ");
+define("_EMAILII",", æ Ğáß ÈÊÍæíá ÈÑíÏß ÇáÅáßÊÑæäí ãä äÙÇã ÇáÃÓßí Åáì ÇáäÙÇã ÇáÚÔÑí. ÈÈÓÇØÉ Şã ÈßÊÇÈÉ ÚäæÇä ÈÑíÏß ÇáÅáßÊÑæäí İæŞ Ëã ÃÖÛØ Úáì ÊÔİíÑ¡ ÈÚÏ Ğáß Şã ÈäÓÎ ÇáßæÏ ÇáäÇÊÌ æ ÃáÕŞå İí ÕİÍÊß¡ æ áÅÚÇÏÉ İß ÊÔİíÑ ÈÑíÏß ÇáÅáßÊÑæäí İÅäß áÇ ÊÍÊÇÌ ÅáÇ áãÊÕİÍ ÅäÊÑäÊ ÚÇÏí áßí íŞæã Èİß ÇáÊÔİíÑ ÈÔßá ÃÚÊíÇÏí Ïæä Ãí æÙíİÉ ÒÇÆÏÉ.");
+define("_URLT","åĞå ÇáÃÏÇÉ ÊÓãÍ áß ÈÊÔİíÑ æ İß ÊÔİíÑ ÚäÇæíä ÇáãæÇŞÚ æ ÅÓÊÈÏÇá ÇáÑãæÒ ÈÑãæÒ ÂãäÉ íãßäß ÅÓÊÎÏÇãåÇ Ïæä Ãí ÖÑÑ.");
+define("_CON","ÊÍæíá");
+define("_HTMLEP","åĞå ÇáÃÏÇÉ ÊÓãÍ áß ÈÅÖÇİÉ ßæÏ ÇáÅÊÔ Êí Åã Åá Åáì ÕİÍÊß Ïæä Ãä íŞæã ÇáãÊÕİÍ ÈÊäİíĞåÇ");
+define("_CFF","ÊÍæíá Åáì ÇáãäÊÏíÇÊ");
+define("_PREVIEWR","ãÚÇíäÉ");
+define("_PREVIEWERI","ÃÖİ ßæÏ ÇáÅÊÔ Êí Ãã Åá Ãæ ÇáÌÇİÇ ÓßÑÈÊ áßí ÊÚÇíäåÇ æ ÊÊÃßÏ ãä ÚÏã æÌæÏ ÃÎØÇÁ.");
+?>

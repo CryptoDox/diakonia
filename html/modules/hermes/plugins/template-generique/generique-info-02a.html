@@ -1,0 +1,28 @@
+  
+  <div style='width:800px;text-align:center;'>
+    <div style='width:800px;'>  
+      <table class="outer">
+        <tr><td class='head' ><{$property.header}></td></tr>
+    
+        <tr><td>        
+          <{foreach item=article from=$info}>
+            <div  style='width:380px;float: left;margin:3'>  
+              <table class="head"><tr>
+                <td class='head' ><b><{$article.ordreTitle.value}></b></td></tr>             
+              </table>
+              
+              <div style='height:200px;overflow: scroll'>    
+                <{$article.ordreHometext.value}>          
+              </div>  
+            </div>   
+          <{/foreach}>
+        </td></tr>
+        
+        
+        <tr><td class='foot'><{$property.footer}></td></tr>      
+      </table>
+    </div>  
+
+  </div>  
+
+  

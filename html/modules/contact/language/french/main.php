@@ -1,0 +1,20 @@
+<?php
+define('_MD_CONTACT_FORM', "Formulaire de Contact");
+define('_MD_CONTACT_NAME', "Nom");
+define('_MD_CONTACT_MAIL', "Courriel");
+define('_MD_CONTACT_URL', "Lien");
+define('_MD_CONTACT_ICQ', "ICQ");
+define('_MD_CONTACT_COMPANY', "Compagnie");
+define('_MD_CONTACT_LOCATION', "Location g&#233;ographique");
+define('_MD_CONTACT_PHONE', "Téléphone");
+define('_MD_CONTACT_ADDRESS', "Adresse");
+define('_MD_CONTACT_SUBJECT', "Sujet");
+define('_MD_CONTACT_MESSAGE', "Commentaire");
+define('_MD_CONTACT_DEPARTMENT', "Département");
+define('_MD_CONTACT_DEFULTDEP', "Contact");
+define('_MD_CONTACT_MES_SEND', "Merci de nous avoir contacté");
+define('_MD_CONTACT_MES_NOVALIDEMAIL', "Votre adresse de courriel n'est pas valide");
+define('_MD_CONTACT_MES_NOTSAVE', "Désolé, votre message n'a pas été sauvegardé dans notre base de données");
+define('_MD_CONTACT_MES_SAVEINDB', "Votre message a été sauvegardé dans notre base de données");
+define('_MD_CONTACT_MES_SENDERROR', "Erreur lors de l'envoi du message");
+define('_MD_CONTACT_MES_ERROR', "Erreur");

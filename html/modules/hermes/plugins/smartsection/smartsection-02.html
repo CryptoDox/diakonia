@@ -1,0 +1,32 @@
+<b>Essai d'affiche du pluginSmartSection avec un template</b>
+      
+  <table width="100%" cellspacing="1" class="outer">
+      <{foreach item=article from=$info}>
+          <{if $zone.rupture <> 0}>
+          <tr>
+            <{foreach item=zone from=$article}>   
+                <{if }> 
+                <td class='odd' align='left'>             
+                <{$zone.name}>  
+                </td>                               
+            <{/foreach}>          
+          </tr>  
+          
+          
+          <{/if}>
+          
+          
+          
+          <tr>
+            <{foreach item=zone from=$article}>    
+                <td class='odd' align='left'>             
+                <{$zone.value}>  
+                </td>                               
+            <{/foreach}>          
+          </tr>  
+        
+      <{/foreach}>
+  
+  </table>
+
+

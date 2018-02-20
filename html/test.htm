@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<script src="/jquery/jquery-3.2.1.js" ></script>
+<script src="https://authedmine.com/lib/captcha.min.js" async></script>
+<meta charset="utf-8">
+<title>Document sans nom</title>
+</head>
+<body>
+
+<div id="divJavascriptSupport" align="center" class="inscri">
+	Votre Navigateur ne semble pas supporter Javascript ou bien il est d&eacute;sactiv&eacute;.<br />
+<br />
+Vous devez activer Javascript pour acceder au t&eacute;l&eacute;chargement du fichier.
+	</div>
+
+<script language="javascript">
+  function testJavascript(id) {
+    // test pour valider que le Javascript que tu utilises fonctionne bien
+    // if (! document.getElementById);	
+    // return;
+	// Hide(\'divJavascriptSupport\'); // on masque le div si Javascript marche
+    document.getElementById(id).style.visibility = "hidden"; // Hide ('divJavascriptSupport'); // on masque le div si Javascript marche
+	document.write('<form action="D.php" method="post"><input type="submit" value="Télécharger"/>');
+  }
+</script>
+
+<script language="javascript">
+	testJavascript('divJavascriptSupport');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+www.frxoops.org/backend.php
+www.lemonde.fr/web/sequence/0,2-3232,1-0,0.html
+www.lemonde.fr/web/sequence/0,2-3208,1-0,0.html
+www.frxoops.org/modules/newbb/rss.php?f=5
+
+
+
+les dernières nouveautés éditées et diffusées par La Documentation française
+http://www.ladocumentationfrancaise.fr/catalogue/rss/nouveautes.xml
+
+
+Droit, institutions, vie politique
+http://www.ladocumentationfrancaise.fr/catalogue/rss/droit-institutions.xml
+
+Économie
+http://www.ladocumentationfrancaise.fr/catalogue/rss/economie.xml
+
+Formation, emploi
+http://www.ladocumentationfrancaise.fr/catalogue/rss/formation-emploi.xml
+
+Culture, communication
+http://www.ladocumentationfrancaise.fr/catalogue/rss/culture.xml
+
+Société
+http://www.ladocumentationfrancaise.fr/catalogue/rss/societe.xml
+
+Environnement, territoires
+http://www.ladocumentationfrancaise.fr/catalogue/rss/environnement.xml
+
+Europe, international
+http://www.ladocumentationfrancaise.fr/catalogue/rss/europe-international.xml
+
+Conventions collectives
+http://www.ladocumentationfrancaise.fr/catalogue/rss/conventions-collectives.xml
+
+ 
+les derniers rapports publics mis à votre disposition dans la Bibliothèque des rapports publics
+http://www.ladocumentationfrancaise.fr/rapports/rss/general.xml
+
+Droit, institutions, vie politique
+http://www.ladocumentationfrancaise.fr/rapports/rss/droit-institutions-viepolitique.xml
+
+Économie
+http://www.ladocumentationfrancaise.fr/rapports/rss/economie.xml
+
+Enseignement
+http://www.ladocumentationfrancaise.fr/rapports/rss/enseignement.xml
+
+Culture, communication
+http://www.ladocumentationfrancaise.fr/rapports/rss/culture-communication.xml
+
+Société, emploi
+http://www.ladocumentationfrancaise.fr/rapports/rss/societe-emploi.xml
+
+Environnement, territoires
+http://www.ladocumentationfrancaise.fr/rapports/rss/environnement-territoires.xml
+
+Europe, international
+http://www.ladocumentationfrancaise.fr/rapports/rss/europe-international.xml
+
+

@@ -1,0 +1,41 @@
+  
+  <div style='text-align:center;'>
+  <div style='width:600px;'>  
+  <table class="outer"><tr><td class='head' ><{$property.header}></td></tr></table>    
+  
+  <table width="100%" cellspacing="1" class="outer">
+      <{foreach item=article from=$info}>
+          <{if $zone.rupture == 0}>
+          <tr>
+            <{foreach item=zone from=$article}>   
+                <{if $zone.name <> $smarty.const._HER_CODE_RUPTURE}> 
+                  <td class='odd' align='left'>             
+                  <{$zone.name}>  
+                  </td>                               
+                
+                <{/if}>
+            <{/foreach}>          
+          </tr>  
+          
+          
+          <{/if}>
+          
+          
+          
+          <tr>
+            <{foreach item=zone from=$article}>    
+                <{if $zone.name <> $smarty.const._HER_CODE_RUPTURE}>                
+                  <td class='odd' align='left'>             
+                  <{$zone.value}>  
+                  </td>       
+                <{/if}>                                          
+            <{/foreach}>          
+          </tr>  
+        
+      <{/foreach}>
+  
+  </table>
+  <table class="outer"><tr><td class='foot'><{$property.footer}></td></tr></table>
+  
+  </div>
+  </div>

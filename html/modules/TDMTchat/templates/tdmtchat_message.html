@@ -1,0 +1,128 @@
+<!--affichage du trombinoscope--> 
+		<div class="head">
+		<{$smarty.const._MD_TDMTCHAT_WELCOME}> <{$module_name}>
+		</div>
+
+<{if !$user_uid}>
+<br />
+<div class="alert">
+<a href="<{$smarty.const.XOOPS_URL}>/register.php"><{$smarty.const._MD_TDMTCHAT_REGISTER}></a>
+</div>
+<br />
+<{/if}>
+
+<div class="odd">
+<table><tr><td width='50%'>
+<div style='float: left; padding:10px; padding-right:20px;'><{$user_picture}></div>
+<div style='padding:10px;'>
+	<ul>
+	<{if $user_uname}><li><span class="bold"><{$smarty.const._MD_TDMTCHAT_UNAME}></span>&nbsp;:&nbsp;<{$user_uname}></li><{/if}>
+	<{if $user_name}><li><span class="bold"><{$smarty.const._MD_TDMTCHAT_NAME}></span>&nbsp;:&nbsp;<{$user_name}></li><{/if}>
+	<{if $user_location}><li><span class="bold"><{$smarty.const._MD_TDMTCHAT_LOCATION}></span>&nbsp;:&nbsp;<{$user_location}></li><{/if}>
+	<{if $user_extra}><li><span class="bold"><{$smarty.const._MD_TDMTCHAT_EXTRA}></span>&nbsp;:&nbsp;<{$user_extra}><br /><{$user_sig}></li><{/if}>
+	</ul>	
+</div>
+</td>
+<td width='50%'>
+<img style='float: left; padding:10px; padding-right:20px;' src='<{$smarty.const.TDMTCHAT_IMAGES_URL}>/family.png'>
+<div style='padding:10px;'>
+	<ul>
+<li><{$total_online}> <{$smarty.const._MD_TDMTCHAT_ONLINE_TOTAL}> <{$total_module}> <{$module_name}>.</li>
+<li><{$all_member}> <{$smarty.const._MD_TDMTCHAT_OFFLINE_DESC}></li>
+<li><{$total_member}> <{$smarty.const._MD_TDMTCHAT_SEARCH_DESC}></li>
+</ul>
+</div>
+</td></tr></table>
+</div>
+<br class="clear"/>
+
+<br />
+<div class="switch">
+<table><tr><td style="vertical-align:middle">
+<a href="<{$smarty.const.TDMTCHAT_URL}>/message.php?order=asc"><{$smarty.const._MD_TDMTCHAT_ASC}></a> &gt; <a href="<{$smarty.const.TDMTCHAT_URL}>/message.php?order=desc"><{$smarty.const._MD_TDMTCHAT_DESC}></a></span> 
+</td></tr></table>
+</div>
+
+<br style="clear: both;"/>	<br />
+<form name="del" id="del" action="message.php" method="post">
+
+<{if $total_member != 0}>
+	
+			<div style="margin: 10px;">
+
+				<ul class="display thumb_view">	
+					<{section name=i loop=$member}>
+				
+						<li>
+						<span><a href="javascript:;" onclick="javascript:masque('<{$member[i].uid}>')" class="switch_thumb"><img src="<{$smarty.const.TDMTCHAT_IMAGES_URL}>/view_tree.png" alt="<{$smarty.const._MD_TDMTCHAT_VIEWTREE}>" title="<{$smarty.const._MD_TDMTCHAT_VIEWTREE}>" /></a></span>
+							<div class="content_block">
+								<div><{$member[i].picture}></div>
+								<div><h2><a href="#"><{$member[i].uname}></a></h2><span class="name"><{if $member[i].name}>, <{$member[i].name}><{/if}><{if $member[i].location}>, <{$member[i].location}><{/if}></span></div>
+								<span class="status"><{if $perm_tchat}><{if $user_uid}><a href="javascript:;"><img href="javascript:;" onclick="javascript:chatWith('<{$member[i].uname}>')" src="<{$smarty.const.TDMTCHAT_IMAGES_URL}>/tchat.png" alt="<{$smarty.const._MD_TDMTCHAT_TCHAT}>" title="<{$smarty.const._MD_TDMTCHAT_TCHAT}>" /></a>&nbsp;<{/if}><{/if}><{if $perm_carte}><a href="javascript:;"><img onclick="display_dialog(<{$member[i].uid}>, true, true, 'slide', 'slide', 240, 470);" src="<{$smarty.const.TDMTCHAT_IMAGES_URL}>/identity.png" alt="<{$smarty.const._MD_TDMTCHAT_POPUP}>" title="<{$smarty.const._MD_TDMTCHAT_POPUP}>" /></a>&nbsp;<{/if}><{$member[i].status}></span>
+					<br />
+								
+							<div style="float: left; width: 80%;">
+							<div class="tchat_comment_box">
+							<div class="tchat_comment"> 
+							<{$member[i].recd}> <h2><{$member[i].from}></h2> : <{$member[i].sent}> - <{$member[i].message}>
+							</div> </div> 
+							<div class="tchat_comment_footer"><img class="coin" src="<{$smarty.const.TDMTCHAT_IMAGES_URL}>/leftBottom.png" /> </div>
+							<br class="clear" />
+						<!-- sous convers -->					
+							<div id="masque_<{$member[i].uid}>" style="display: none;">
+							<{foreach item=chat from=$member[i].chat}>
+							<div class="tchat_comment_box">
+							<div class="tchat_comment"> 
+							<{$chat.recd}> <h2><{$chat.from}></h2> : <{$chat.sent}> - <{$chat.message}>
+							</div> </div> 
+							<div class="tchat_comment_footer"><img class="coin" src="<{$smarty.const.TDMTCHAT_IMAGES_URL}>/leftBottom.png" /> </div>
+							<br class="clear" />
+							<{/foreach}>
+							</div>
+							</div>
+							</div>
+						</li>
+					
+						<{/section}>
+					</ul>
+	
+			</div>
+		</form>
+	<{if $perm_carte}>	
+	<!--Pop-pup-->
+		<{section name=i loop=$member}>
+	<div id="dialog<{$member[i].uid}>" title="<{$member[i].uname}>" style="display: none;" />
+	<div>
+	<div style='float: left; padding:10px; padding-right:40px;'><{$member[i].picture}></div>
+				<ul>
+					<{if $member[i].uname}><li><span class="bold"><{$smarty.const._MD_TDMTCHAT_UNAME}></span>&nbsp;:&nbsp;<{$member[i].uname}></li><{/if}>
+					<{if $member[i].name}><li><span class="bold"><{$smarty.const._MD_TDMTCHAT_NAME}></span>&nbsp;:&nbsp;<{$member[i].name}></li><{/if}>
+					<{if $member[i].location}><li><span class="bold"><{$smarty.const._MD_TDMTCHAT_LOCATION}></span>&nbsp;:&nbsp;<{$member[i].location}></li><{/if}>
+					<{if $member[i].extra}><li><span class="bold"><{$smarty.const._MD_TDMTCHAT_EXTRA}></span>&nbsp;:&nbsp;<{$member[i].extra}><br /><{$member[i].sig}></li><{/if}>
+				</ul>	<br class="clear" />				
+				<span>
+					<{if $user_uid}><a href="javascript:;" onclick="javascript:chatWith('<{$member[i].uname}>')"><img src="<{$smarty.const.TDMTCHAT_IMAGES_URL}>/map_tchat.png" alt="<{$member[i].uname}>" title="<{$member[i].uname}>" /></a><{/if}>
+					<{if $member[i].email}><a href='mailto:<{$member[i].email}>'><img src="<{$smarty.const.TDMTCHAT_IMAGES_URL}>/map_mail.png" alt="<{$member[i].email}>" title="<{$member[i].email}>" /></a><{/if}>
+					<{if $user_uid}><a href='javascript:openWithSelfMain("<{$smarty.const.XOOPS_URL}>/pmlite.php?send2=1&amp;to_userid=<{$member[i].uid}>","pmlite",450,370);'><img src="<{$smarty.const.TDMTCHAT_IMAGES_URL}>/map_mp.png" alt="<{$member[i].uname}>" title="<{$member[i].uname}>" /></a><{/if}>
+					<{if $member[i].url}><a href='<{$member[i].url}>' rel='external'><img src="<{$smarty.const.TDMTCHAT_IMAGES_URL}>/map_url.png" alt="<{$member[i].url}>" title="<{$member[i].url}>" /></a><{/if}>
+					<a href='<{$smarty.const.XOOPS_URL}>/userinfo.php?uid=<{$member[i].uid}>' rel='external'><img src="<{$smarty.const.TDMTCHAT_IMAGES_URL}>/map_profil.png" alt="<{$member[i].uname}>" title="<{$member[i].uname}>" /></a>
+				</span>																																									
+				</div>
+			</div>
+			<!--Pop-pup-->
+			<{/section}>
+			<{/if}>
+	<br /><br />
+<div align="right"><{$nav_page}></div>
+<br /><br />
+<{else}>
+<br /><br />
+<div class="alert">
+<{$smarty.const._MD_TDMTCHAT_NOMEMBER}>
+</div>
+<br />
+	<{/if}>
+<br class="clear"/>
+
+
+

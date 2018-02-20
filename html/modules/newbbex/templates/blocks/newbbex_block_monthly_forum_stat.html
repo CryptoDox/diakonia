@@ -1,0 +1,25 @@
+<table class="outer" cellspacing="1">
+  <tr>
+    <th><{$block.lang_category}></th>
+    <th><{$block.lang_forum}></th>
+    <th><{$block.lang_forumtype}></th>
+    <th align="right"><{$block.lang_topics}></th>
+    <th align="right"><{$block.lang_replies}></th>
+    <th align="center"><{$block.lang_month_messages}></th>
+  </tr>
+
+  <{foreach item=forum from=$block.forums}>
+  <tr class="<{cycle values="even,odd"}>">
+    <td><{$forum.forum_cat_title}></td>
+    <td><a href="<{$xoops_url}>/modules/newbbex/viewforum.php?forum=<{$forum.forum_id}>"><{$forum.forum_name}></a></td>
+    <td><{if $forum.forum_type == 0}> <{$block.lang_public}> <{else}> <{$block.lang_private}> <{/if}></td>
+    <td align="right"><{$forum.forum_total_topics}></td>
+    <td align="right"><{$forum.forum_total_posts}></td>
+    <td align="center"><{$forum.forum_total_month_posts}></td>
+  </tr>
+  <{/foreach}>
+</table>
+
+<div style="text-align:right; padding: 5px;">
+<{$block.lang_interval}> &nbsp;-&nbsp; <a href="<{$xoops_url}>/modules/newbbex/"><{$block.lang_visitforums}></a>
+</div>

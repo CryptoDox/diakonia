@@ -1,0 +1,25 @@
+{include file='fncTemplate.php'}
+  
+  <div style='text-align:center;'>
+  
+  <table class="outer">
+    <tr><td class='head' align='center'><{$property.header}></td></tr>    
+    <tr><td class='head' align='center'><{$structure.nom}></td></tr>
+  </table>  
+  
+  <table width="100%" cellspacing="1" class="outer">
+      <{foreach item=article from=$info}>
+          
+          <tr>          
+                  <td class='odd' align='left'>             
+                  <{$article.col_pubDate.value}> - <{$article.col_title.value}>  
+                  </td>    
+          </tr>                     
+        
+      <{/foreach}>
+  
+  </table>
+  <table class="outer"><tr><td class='foot'><{$property.footer}></td></tr></table>
+  
+
+  </div>

@@ -1,0 +1,19 @@
+************************************************************
+Version 1 | 03-JUN-2009
+Dev: Xoops 2.0.16 / 2.2.3
+************************************************************
+
+Utiliser le plug <{xoSpot}> dans vos template la ou vous souhaiter afficher votre menu 
+
+- Toute les Option <{xoSpot page=3-4 default=4 display=1 style=none}>
+- Param page: séparer par - affiche les liens vers les pages indiquers sauf permission contraire, SANS affiche toutes les pages.
+- Param default: Page afficher au lancement, SANS aucune.
+- Param display: 1= affiche Text (class du texte menus/none/style.css) ou Tabs, 2= Select (class du select menus/select/style.css), SANS n'affiche pas le menu.
+- Param style: Style du tabs exemple style=jquery voir (menus/) pour d'autre style.
+
+Note: Crée de nouveau Style , crée un dossier dans (menus/) exemple menus/monstyle/style.css puis apeller simplement votre dosier dans style=monstyle, ATTENTION n'oublier pas de copier l'index.html d'un autre dossier pour le coller dans votre nouveau dossier.
+
+
+************************************************************
+
+************************************************************

@@ -1,0 +1,109 @@
+<{foreach from=$block.data item=data}>
+<table class="outer" style="margin-bottom:10px;">
+	<tr>
+		<th style="text-align:left;" colspan="2"><b><{$data.name}></b></th>
+	</tr>
+	<tr>
+		<td class="head"><{$block.lang.description}></td>
+		<td class="head"><{$data.description}></td>
+	</tr>
+	<tr class="even">
+		<td style="width:50%;"><b><{$block.lang.projectstart}>:</b> <{$data.startdate}></td>
+		<td style="width:50%;"><b><{$block.lang.projectdeadline}>:</b> <{$data.enddate}></td>
+	</tr>
+	<tr>
+		<td class="even" style="padding:0;">
+			<table>
+				<tr>
+					<td class="head"  style="width:60%;padding:0;">
+						<a href="?op=showproject&amp;project_id=<{$data.project_id}>&amp;order=<{if $data.sort != 'nameup'}>nameup<{else}>namedown<{/if}>" title="A-Z"><b><{$block.lang.todo}></b></a>
+					</td>
+					<td class="head"  style="width:10%;text-align:center;padding:0;">
+						<a href="?op=showproject&amp;project_id=<{$data.project_id}>&amp;order=<{if $data.sort != 'userup'}>userup<{else}>userdown<{/if}>" title="A-Z"><b><{$block.lang.respuser}></b></a>
+					</td>
+					<td class="head" style="width:10%;text-align:center;padding:0;">
+						<a href="?op=showproject&amp;project_id=<{$data.project_id}>&amp;order=<{if $data.sort != 'statusup'}>statusup<{else}>statusdown<{/if}>" title="A-Z"><b><{$block.lang.status}></b></a>
+					</td>
+					<td class="head" style="width:10%;text-align:center;padding:0;">
+						<a href="?op=showproject&amp;project_id=<{$data.project_id}>&amp;order=<{if $data.sort != 'hoursup'}>hoursup<{else}>hoursdown<{/if}>" title="&lt;"><b><{$block.lang.hours}></b></a>
+					</td>
+				</tr>
+				<{foreach from=$data.tasks item=task}>
+				<{if $task.status < 100 or ($task.children != NULL and $task.childrencompleted != "true")}>	
+				<tr>
+					<td class="even" style="padding:0;padding-left:<{$task.indent}>px;">
+						<{$task.title}>
+					</td>	
+					<td class="odd" style="text-align:center;padding:0;"><{$task.uname}></td>
+					<td class="odd" style="text-align:center;padding:0;"><{$task.status}>%</td>
+		 			<td class="odd" style="text-align:center;padding:0;"><{$task.hours}></td>
+				
+				</tr>
+				<tr>
+					<td class="comDate" style="padding:0;padding-left:<{$task.indent}>px;" colspan="3">
+						<{$task.description}>
+					</td>
+		 			<td class="odd" style="text-align:center;padding:0;">&nbsp;</td>
+				</tr>
+				<{/if}>
+				<{/foreach}>
+				<tr>
+					<td class="foot" colspan="3"><i><{$block.lang.hourstodo}></i></td>
+					<td class="foot" align="center"><{$data.todo}></td>
+				</tr>
+			</table>
+		</td>
+	<!-- END OF TODO LIST SIDE -- BEGIN FINISHED SIDE -->
+		<td class="even" style="padding:0;">
+			<table>
+				<tr>
+					<td class="head" style="width:60%;padding:0;">
+						<a href="?op=showproject&amp;project_id=<{$data.project_id}>&amp;order=<{if $data.sort != 'nameup'}>nameup<{else}>namedown<{/if}>" title="A-Z"><b><{$block.lang.completedtasks}></b></a>
+					</td>
+					<td class="head" style="width:10%;padding:0;text-align:center;">
+						<a href="?op=showproject&amp;project_id=<{$data.project_id}>&amp;order=<{if $data.sort != 'userup'}>userup<{else}>userdown<{/if}>" title="A-Z"><b><{$block.lang.respuser}></b></a>
+					</td>
+					<td class="head" style="width:10%;padding:0;text-align:center;">
+						<a href="?op=showproject&amp;project_id=<{$data.project_id}>&amp;order=<{if $data.sort != 'hoursup'}>hoursup<{else}>hoursdown<{/if}>" title="&lt;"><b><{$block.lang.hours}></b></a>
+					</td>					
+				</tr>
+				<{foreach from=$data.tasks item=task}>
+				<{if $task.status == 100 or $task.somechildrendone == "true"}>	
+				<tr>
+					<td class="even" style="padding:0;padding-left:<{$task.indent}>px;">
+							<{$task.title}>									
+					</td>	
+					<td class="odd" style="padding:0;"><{$task.uname}></td>
+		 			<td class="odd" style="text-align:center;padding:0;"><{$task.hours}></td>
+				</tr>
+				<tr>
+					<td class="comDate" style="padding:0;padding-left:<{$task.indent}>px;" colspan="2">
+							<{$task.description}>									
+					</td>	
+		 			<td class="odd" style="text-align:center;padding:0;">&nbsp;</td>
+				</tr>
+				<{/if}>
+				<{/foreach}>
+				<tr>
+                	<td class="foot" colspan="2"><i><{$block.lang.hoursdone}></i></td>
+					<td class="foot" style="text-align:center;"><{$data.done}></td>
+				</tr>
+			</table>
+		</td>
+    </tr>
+  	<tr>
+    	<td colspan="2" class="foot">
+			<table style="margin:0px;padding:0px;">
+				<tr>
+					<td style="width:200px;"><{$data.timeinfo}></td>
+					<td><{$data.timebar}></td>
+				</tr>
+				<tr>
+					<td style="width:200px;"><{$data.workinfo}></td>
+					<td><{$data.progressbar}></td>
+				</tr>
+			</table>
+        </td>
+	</tr>
+</table>
+<{/foreach}>

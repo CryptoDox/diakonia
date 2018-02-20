@@ -1,0 +1,106 @@
+Module		: newbbex
+Auteur		: Hervé Thouzard (herve@herve-thouzard.com)
+Site		: http://www.herve-thouzard.com
+Date 		: 03/01/2004
+Mise à jour : 01/03/2005 - 16/04/2005 - 27/07/2005 - 21/12/2005 - 15/01/2006
+Type 		: Extension et modification du module forum
+Version de Xoops utilisée 	: 2.0.5.1 et 2.0.9.2
+Crédits : Ce module est totalement basé sur le forum (version 1)
+		  de Xoops, donc tous les crédits vont à ses auteurs.
+
+
+Installation :
+Installez ce module comme n'importe quel autre module Xoops
+
+
+Note :
+Vous pouvez utiliser le module de forum de Xoops par défaut (newbb) ET
+ce module en même temps. En effet, newbbex utilise des tables séparées
+de newbb.
+
+
+Améliorations et Ajouts :
+Tout d'abord, la partie administrative a été revue et contient, tout comme
+phpbb, une liste plus visuelle des forums avec la possibilité d'ajouter,
+de supprimer et de modifier des catégories et forums. On y trouve aussi
+le nombre de sujets et le nombre total de sujets+réponses. On a la
+possibilité, pour les forums privés, d'en modifier les permissions
+depuis cet  écran.
+
+Lorsqu'on ajoute ou lorsqu'on édite un forum, trois nouvelles zones sont
+maintenant disponibles dans la fenêtre de configuration du forum :
+
+	Remplacer le pseudo par le nom réel
+Permet, comme son nom l'indique, de remplacer le nom d'utilisateur par
+son nom réel. Ce qui dans mon cas, remplacera hthouzard par Hervé Thouzard.
+Il n'y a que dans les mails de notification que les pseudos sont conservés.
+Il est tout à fait possible de modifier le code afin que le pseudo soit
+remplacé par le nom réel mais cela implique de modifier le noyau de Xoops
+car les notifications sont gérées par le noyau et non pas par le module.
+
+	Voir le panneau des icônes
+Affiche ou cache, lorsqu'on crée un nouveau message dans les forums ou
+lorsqu'on fait une réponse, la zone permettant d'affecter un icône au
+message. Notez que lorsque cette zone est à oui et lorsqu'on se retrouve
+à regarder le contenu d'un forum, l'icône du message est masquée.
+
+	Voir le panneau des smilies
+Cette zone, agit comme la précédente, mais c'est la liste des smilies
+qui est cachée ou affichée.
+
+
+Ces zones ont été rajoutées car lorsque l'on souhaite utiliser Xoops en
+milieu profesionnel, il est toujours plus agréable de voir des noms
+complets plutot que des nom d'utilisateurs et ensuite car bien souvent,
+et même si cela est très puissant, les icônes et le panneau des smilies
+ne sont pas utilisés et surtout, considérés comme du gadget. Attention,
+ca n'est pas forcément mon opinion. Mais comme je l'ai entedu dire
+"Ca fait plus sérieux sans".
+
+
+A ce module, j'ai rajouté 4 nouveaux blocs :
+- Sujets sans réponse
+- Sujets privés sans réponse
+- Sujets privés et publiques sans réponse
+- Statistique des forums
+
+Les trois premiers blocs permettent de voir, à l'intérieur des forums,
+les sujets qui n'ont pas eu de réponse. Je considère qu'un forum sert
+à poser des questions et à recevoir des réponses, pour un administrateur
+et/ou pour des modérateurs, je pense qu'il est important de connaître
+rapidement les messages sans réponse. Ces blocs sont donc là pour ca
+
+Le dernier bloc (statistiques), affiche pour chaque forum :
+	- sa catégorie
+	- nom nom
+	- son type (privé ou public)
+	- le nombre total de sujets
+	- le nombre total de réponses
+	- La date du dernier envoi
+
+
+Au final, quelques petites corrections ont été apportées içi et là,
+notamment sur des "problèmes" d'internationalisation.En effet,
+certaines parties, notamment dans l'administration des forums, n'ont
+pas été traduites mais tapées en dur dans les scripts (comme current
+et Add)
+
+
+Migration de newbb à newbbex :
+La migration d'un module à l'autre peut se faire très facilement.
+Les zones ajoutées dans les tables par rapport à la version
+originelle du forum contienent des valeurs par défaut qui
+paramétront les forums pour agir exactement à l'identique des
+forums utilisés dans newbb. Il suffit donc de faire un export
+sql (avec phpmyadmin par exemple) des tables de newbb pour
+les importer dans newbbex. Il faut juste, une fois le fichier
+sql crée, remplacer les noms des tables comme suit :
+
+bb_categories 	=> bbex_categories
+bb_forum_access	=> bbex_forum_access
+bb_forum_mods 	=> bbex_forum_mods
+bb_forums 	=> bbex_forums
+bb_posts 	=> bbex_posts
+bb_posts_text 	=> bbex_posts_text
+bb_topics 	=> bbex_topics
+

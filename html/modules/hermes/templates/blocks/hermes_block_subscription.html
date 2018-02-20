@@ -1,0 +1,36 @@
+<form ACTION='<{$smarty.const.XOOPS_URL}>/modules/hermes/souscription.php?op=subscription' METHOD=POST>
+
+
+
+<div  align='center'>
+<!-- 
+
+  <{if $block.isOk == 0}>
+  <{else}>
+    <{$smarty.const._MB_HER_ISREGISTRY}><br>
+  <{/if}>
+-->  
+  
+      <{$smarty.const._MB_HER_EMAIL}>(<font color="#FF0000">*</font>)<br>
+        <input type="text" name="txtEmail" size="20"><br>
+      
+      <{if $block.userName == 1}>      
+        <{$smarty.const._MB_HER_NAME}><br>
+          <input type="text" name="txtName" size="20"><br>
+      <{else}> 
+          <INPUT TYPE="hidden" id='txtName'  NAME='txtName'  size='1%' VALUE='unknow'>            
+      <{/if}>  
+     
+      <INPUT TYPE="hidden" id='isCapcha'  NAME='isCapcha'  size='1%' VALUE='<{$block.capcha.ok}>'>       
+      <{if $block.capcha.ok == 1}> 
+        <{$block.capcha.libelle}>
+        <{$block.capcha.capcha}>
+      <{/if}>
+    
+      
+      <input type="submit" value="<{$smarty.const._MB_HER_SUBSCRIPT}>" name="B1">
+
+</div>  
+
+
+</form>
