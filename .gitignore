@@ -11,4 +11,5 @@ test.css
 /html/themes/xbootstrap/tpl/shareaholic-script.html
 /html/include/fonction_captcha_verif.inc.php
 /html/include/fonction_captcha_verif_secure.inc.php
+/html/class/mocaptcha/mocaptcha.script.php
 /uploads/Presentation_Book_Low_003.mp4
